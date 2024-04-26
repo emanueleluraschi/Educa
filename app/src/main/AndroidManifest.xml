@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Educa"
         tools:targetApi="31">
         <activity
+            android:name=".Login_registrazione"
+            android:exported="false" />
+        <activity
             android:name=".Punto_inizio"
             android:exported="true">
             <intent-filter>
