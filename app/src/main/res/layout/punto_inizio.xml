@@ -10,12 +10,14 @@
     <Button
         android:id="@+id/button3"
 
-        style="@style/PrimaryButtonStyle"
+
+        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Log-in "
-        
+        android:fontFamily="@font/poppins_regular"
 
+
+        android:text="Log-in "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -43,4 +45,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,22 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="primarycolor">#2A486E</color>
-    <color name="primarycolorchiaro">#7890B0</color>
-    <color name="primarycolorchiaromedio">#4B688D</color>
-    <color name="primarycolormedioscuro">#122C4E</color>
-    <color name="primarycolorscuro">#04172F</color>
-    <color name="secondarycolor">#A86036</color>
-    <color name="secondarycolorchiaro">#FFC7A6</color>
-    <color name="secondarycolorchiaromedio">#D79168</color>
-    <color name="secondarycolormedioscuro">#783812</color>
-    <color name="secondarycolorscuro">#481B00</color>
-    <color name="tertiarycolor">#A89036</color>
-    <color name="tertiarycolorchiaro">#FFECA6</color>
-    <color name="tertiarycolorchiaromedio">#D7BF68</color>
-    <color name="tertiarycolormedioscuro">#786212</color>
-    <color name="tertiarycolorscuro">#483900</color>
     <color name="md_theme_primary">#1F6587</color>
     <color name="md_theme_onPrimary">#FFFFFF</color>
     <color name="md_theme_primaryContainer">#C5E7FF</color>
@@ -158,7 +140,4 @@
     <color name="md_theme_surfaceContainer_highContrast">#EBEEF3</color>
     <color name="md_theme_surfaceContainerHigh_highContrast">#E5E8ED</color>
     <color name="md_theme_surfaceContainerHighest_highContrast">#DFE3E7</color>
-
-
-
 </resources>
