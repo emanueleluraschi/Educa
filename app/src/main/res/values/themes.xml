@@ -18,6 +18,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:textViewStyle">@id/italic</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textAllCaps">false</item>
         <item name="backgroundTint">#2A486E</item>
         <item name="android:textColor">@color/secondarycolorchiaro</item>
         <item name="android:textSize">20sp</item>
