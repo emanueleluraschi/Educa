@@ -37,31 +37,31 @@
         app:layout_constraintVertical_bias="0.6" />
 
     <Button
-        android:id="@+id/Log_in"
+        android:id="@+id/Sign_in"
         style="@style/Widget.Material3.Button"
         android:layout_width="331dp"
         android:layout_height="wrap_content"
 
         android:fontFamily="@font/poppins_regular"
-        android:text="Log-in "
+        android:text="Sign-in "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/immagine_iniziale" />
 
     <Button
-        android:id="@+id/Log_up"
+        android:id="@+id/Sign_up"
         style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
         android:layout_width="331dp"
         android:layout_height="50dp"
 
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_regular"
-        android:text="Log-up"
+        android:text="Sign-up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Log_in" />
+        app:layout_constraintTop_toBottomOf="@+id/Sign_in" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Educa</string>
+    <string name="portraitText">Portrait</string>
+    <string name="landscapeText">Landscape</string>
 </resources>
