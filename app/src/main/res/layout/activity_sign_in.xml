@@ -106,9 +106,10 @@
         style="@style/Widget.AppCompat.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+
         android:fontFamily="@font/poppins_bold"
         android:text="Bentornato"
-
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Edt_email"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,6 +123,8 @@
         style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
         android:layout_width="0dp"
         android:layout_height="48sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="mariorossi@gmail.com"
         android:inputType="textEmailAddress"
@@ -136,13 +139,15 @@
         style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="48sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="******"
         android:inputType="textPassword"
+
         app:layout_constraintBottom_toTopOf="@+id/Btnlogin_login"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Edt_email" />
 
@@ -150,6 +155,8 @@
         android:id="@+id/Btnlogin_login"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:text="Log in"
         app:layout_constraintBottom_toTopOf="@+id/Txt_signinlogin"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,6 +168,8 @@
         android:id="@+id/Txt_signinlogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="Or sign in with"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
