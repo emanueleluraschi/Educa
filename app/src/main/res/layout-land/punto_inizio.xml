@@ -8,7 +8,7 @@
     tools:context=".Punto_inizio">
 
     <ImageView
-        android:id="@+id/immagine_iniziale"
+        android:id="@+id/img_welcome_immagine_iniziale"
         android:layout_width="317dp"
         android:layout_height="228dp"
         android:scaleType="fitCenter"
@@ -27,12 +27,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/immagine_iniziale"
+        app:layout_constraintStart_toEndOf="@+id/img_welcome_immagine_iniziale"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
 
         <Button
-            android:id="@+id/Sign_in"
+            android:id="@+id/Btn_welcome_Sign_in"
             style="@style/Widget.Material3.Button"
             android:layout_width="331dp"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
             app:layout_constraintVertical_bias="0.5" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txt_welcome_titolo"
             style="@style/Widget.AppCompat.TextView.SpinnerItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,14 +55,14 @@
             android:text="EDUCA"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2"
             android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@+id/Sign_in"
+            app:layout_constraintBottom_toTopOf="@+id/Btn_welcome_Sign_in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/Sign_up"
+            android:id="@+id/Btn_welcome_Sign_up"
             style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
             android:layout_width="331dp"
             android:layout_height="50dp"
@@ -73,7 +73,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Sign_in" />
+            app:layout_constraintTop_toBottomOf="@+id/Btn_welcome_Sign_in" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16sp"
+    tools:context=".Sign_in_frag">
+
+    <Button
+        android:id="@+id/Btn_login_google"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/google_logo_24"
+        android:drawablePadding="12sp"
+        android:text="  Google    "
+        android:textSize="12sp"
+        android:padding="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/Btn_login_Facebook"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Txt_signinlogin" />
+
+    <Button
+        android:id="@+id/Btn_login_Facebook"
+        style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/facebook_logo_24"
+        android:drawablePadding="12sp"
+        android:text=" Facebook  "
+        android:padding="10sp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Btn_login_google"
+        app:layout_constraintTop_toBottomOf="@+id/Txt_signinlogin" />
+
+    <TextView
+        android:id="@+id/Txt_nonhaiaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Non hai un account?"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btnlogin_login" />
+
+    <TextView
+        android:id="@+id/Txt_sign_up_login"
+        style="@android:style/Widget.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:textColor="@color/md_theme_error"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/Txt_nonhaiaccount"
+        app:layout_constraintTop_toTopOf="@+id/Txt_nonhaiaccount" />
+
+    <TextView
+        android:id="@+id/Tct_login_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Email"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_email"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/Txt_login_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Password"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_passoword"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Ricordami"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Edt_passoword" />
+
+    <TextView
+        android:id="@+id/txt_passdimenticata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password dimenticata?"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/checkBox"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Collegati col tuo account"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Txt_login_bentornato" />
+
+    <TextView
+        android:id="@+id/Txt_login_bentornato"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+
+        android:fontFamily="@font/poppins_bold"
+        android:text="Bentornato"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <EditText
+        android:id="@+id/Edt_email"
+        style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="54sp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+
+        android:hint="mariorossi@gmail.com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_passoword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Txt_login_bentornato" />
+
+    <EditText
+        android:id="@+id/Edt_passoword"
+        style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="54sp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="******"
+        android:inputType="textPassword"
+
+        app:layout_constraintBottom_toTopOf="@+id/Btnlogin_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Edt_email" />
+
+    <Button
+        android:id="@+id/Btnlogin_login"
+        android:layout_width="354dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="Log in"
+        app:layout_constraintBottom_toTopOf="@+id/Txt_signinlogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Edt_passoword" />
+
+    <TextView
+        android:id="@+id/Txt_signinlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Or sign in with"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btnlogin_login" />
+</androidx.constraintlayout.widget.ConstraintLayout>

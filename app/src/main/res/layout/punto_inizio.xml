@@ -7,61 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Punto_inizio">
 
-    <ImageView
-        android:id="@+id/immagine_iniziale"
-        android:layout_width="317dp"
-        android:layout_height="228dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/prova_immagine_iniziale" />
-
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/Widget.AppCompat.TextView.SpinnerItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_light"
-        android:text="EDUCA"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/immagine_iniziale"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
-
-    <Button
-        android:id="@+id/Sign_in"
-        style="@style/Widget.Material3.Button"
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-
-        android:fontFamily="@font/poppins_regular"
-        android:text="Sign-in "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/immagine_iniziale" />
-
-    <Button
-        android:id="@+id/Sign_up"
-        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-        android:layout_width="331dp"
-        android:layout_height="50dp"
-
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text="Sign-up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Sign_in" />
-
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>

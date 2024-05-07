@@ -3,26 +3,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/welcome">
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.educa.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
+        android:id="@+id/sign_in_frag"
+        android:name="com.example.educa.Sign_in_frag"
+        android:label="fragment_sign_in_frag"
+        tools:layout="@layout/fragment_sign_in_frag" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_sign_in_frag_to_sign_up"
+            app:destination="@id/sign_up" />
+        <action
+            android:id="@+id/action_sign_in_frag_to_ricerca"
+            app:destination="@id/ricerca" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.educa.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
+        android:id="@+id/welcome"
+        android:name="com.example.educa.Welcome"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_welcome_to_sign_in_frag"
+            app:destination="@id/sign_in_frag" />
+        <action
+            android:id="@+id/action_welcome_to_sign_up"
+            app:destination="@id/sign_up" />
     </fragment>
+    <fragment
+        android:id="@+id/sign_up"
+        android:name="com.example.educa.Sign_up"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_sign_up_to_ricerca"
+            app:destination="@id/ricerca" />
+    </fragment>
+    <fragment
+        android:id="@+id/ricerca"
+        android:name="com.example.educa.Ricerca"
+        android:label="fragment_ricerca"
+        tools:layout="@layout/fragment_ricerca" >
+        <action
+            android:id="@+id/action_ricerca_to_utente_operatore"
+            app:destination="@id/utente_operatore" />
+    </fragment>
+    <fragment
+        android:id="@+id/utente_operatore"
+        android:name="com.example.educa.Utente"
+        android:label="fragment_utente"
+        tools:layout="@layout/fragment_utente_operatore" >
+        <action
+            android:id="@+id/action_utente_to_attivita_salvate"
+            app:destination="@id/attivita_salvate" />
+        <action
+            android:id="@+id/action_utente_operatore_to_ricerca"
+            app:destination="@id/ricerca" />
+    </fragment>
+    <fragment
+        android:id="@+id/attivita_salvate"
+        android:name="com.example.educa.Attivita_salvate"
+        android:label="fragment_attivita_salvate"
+        tools:layout="@layout/fragment_attivita_salvate" />
+    <fragment
+        android:id="@+id/attivita_novita"
+        android:name="com.example.educa.Attivita_novita"
+        android:label="fragment_attivita_novita"
+        tools:layout="@layout/fragment_attivita_novita" />
 </navigation>
