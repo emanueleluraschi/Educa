@@ -8,7 +8,7 @@
     tools:context=".Sign_in_frag">
 
     <Button
-        android:id="@+id/Btn_login_google"
+        android:id="@+id/Btn_sign_up_google"
         style="@style/Widget.Material3.Button.ElevatedButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,13 +17,13 @@
         android:text="  Google    "
         android:textSize="12sp"
         android:padding="10sp"
-        app:layout_constraintEnd_toStartOf="@+id/Btn_login_Facebook"
+        app:layout_constraintEnd_toStartOf="@+id/Btn_sign_up_Facebook"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Txt_signinlogin" />
+        app:layout_constraintTop_toBottomOf="@+id/Txt_sign_up_signingoogleofacebook" />
 
     <Button
-        android:id="@+id/Btn_login_Facebook"
+        android:id="@+id/Btn_sign_up_Facebook"
         style="@style/Widget.Material3.Button.ElevatedButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,11 +34,11 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Btn_login_google"
-        app:layout_constraintTop_toBottomOf="@+id/Txt_signinlogin" />
+        app:layout_constraintStart_toEndOf="@+id/Btn_sign_up_google"
+        app:layout_constraintTop_toBottomOf="@+id/Txt_sign_up_signingoogleofacebook" />
 
     <TextView
-        android:id="@+id/Txt_nonhaiaccount"
+        android:id="@+id/Txt_sign_up_haigiaaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Non hai un account?"
@@ -46,46 +46,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Btnlogin_login" />
+        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_up_crea_account" />
 
     <TextView
-        android:id="@+id/Txt_sign_up_login"
+        android:id="@+id/Txt_sign_up_tosignin"
         style="@android:style/Widget.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign up"
         android:textColor="@color/md_theme_error"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/Txt_nonhaiaccount"
-        app:layout_constraintTop_toTopOf="@+id/Txt_nonhaiaccount" />
+        app:layout_constraintStart_toEndOf="@+id/Txt_sign_up_haigiaaccount"
+        app:layout_constraintTop_toTopOf="@+id/Txt_sign_up_haigiaaccount" />
 
     <TextView
-        android:id="@+id/Tct_login_email"
+        android:id="@+id/Txt_sign_up_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
         android:text="Email"
-        app:layout_constraintBottom_toTopOf="@+id/Edt_email"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_sign_up_email"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/Txt_login_password"
+        android:id="@+id/Txt_sign_up_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
         android:text="Password"
-        app:layout_constraintBottom_toTopOf="@+id/Edt_passoword"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_sign_up_password"
         app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/Cbx_sign_in_ricordami"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Ricordami"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edt_passoword" />
+        app:layout_constraintTop_toBottomOf="@+id/Edt_sign_up_password" />
 
     <TextView
         android:id="@+id/txt_passdimenticata"
@@ -93,55 +93,52 @@
         android:layout_height="wrap_content"
         android:text="Password dimenticata?"
         android:textSize="12sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/checkBox"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Cbx_sign_in_ricordami"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/txt_sign_up_creaaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Collegati col tuo account"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Txt_login_bentornato" />
+        app:layout_constraintTop_toBottomOf="@+id/Txt_sign_up_registrati" />
 
     <TextView
-        android:id="@+id/Txt_login_bentornato"
+        android:id="@+id/Txt_sign_up_registrati"
         style="@style/Widget.AppCompat.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
 
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Bentornato"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Edt_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Edt_email"
+        android:id="@+id/Edt_sign_up_email"
         style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
         android:layout_width="0dp"
         android:layout_height="54sp"
         android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
         android:ems="10"
 
         android:hint="mariorossi@gmail.com"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/Edt_passoword"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_sign_up_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Txt_login_bentornato" />
+        app:layout_constraintTop_toBottomOf="@+id/Txt_sign_up_registrati" />
 
     <EditText
-        android:id="@+id/Edt_passoword"
+        android:id="@+id/Edt_sign_up_password"
         style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
         android:layout_width="0dp"
         android:layout_height="54sp"
@@ -150,27 +147,27 @@
         android:hint="******"
         android:inputType="textPassword"
 
-        app:layout_constraintBottom_toTopOf="@+id/Btnlogin_login"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_sign_up_crea_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edt_email" />
+        app:layout_constraintTop_toBottomOf="@+id/Edt_sign_up_email" />
 
     <Button
-        android:id="@+id/Btnlogin_login"
+        android:id="@+id/Btn_sign_up_crea_account"
         android:layout_width="354dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
         android:text="Log in"
-        app:layout_constraintBottom_toTopOf="@+id/Txt_signinlogin"
+        app:layout_constraintBottom_toTopOf="@+id/Txt_sign_up_signingoogleofacebook"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edt_passoword" />
+        app:layout_constraintTop_toBottomOf="@+id/Edt_sign_up_password" />
 
     <TextView
-        android:id="@+id/Txt_signinlogin"
+        android:id="@+id/Txt_sign_up_signingoogleofacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -181,5 +178,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Btnlogin_login" />
+        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_up_crea_account" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -68,4 +68,13 @@
         android:name="com.example.educa.Attivita_novita"
         android:label="fragment_attivita_novita"
         tools:layout="@layout/fragment_attivita_novita" />
+    <fragment
+        android:id="@+id/miei_utenti_bambini"
+        android:name="com.example.educa.Miei_utenti_bambini"
+        android:label="fragment_miei_utenti_bambini"
+        tools:layout="@layout/fragment_miei_utenti_bambini" >
+        <action
+            android:id="@+id/action_miei_utenti_bambini_to_utente_operatore"
+            app:destination="@id/utente_operatore" />
+    </fragment>
 </navigation>
