@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
-class Utente : Fragment() {
+class Descrizione_attivita : Fragment() {
 
 
     override fun onCreateView(
@@ -15,7 +15,8 @@ class Utente : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_utente_operatore, container, false)
+        val view = inflater.inflate(R.layout.fragment_descrizione_attivita, container, false)
+        return view
     }
 
 
