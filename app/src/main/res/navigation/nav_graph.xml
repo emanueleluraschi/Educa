@@ -13,8 +13,8 @@
             android:id="@+id/action_sign_in_frag_to_sign_up"
             app:destination="@id/sign_up" />
         <action
-            android:id="@+id/action_sign_in_frag_to_ricerca_2"
-            app:destination="@id/ricerca_2" />
+            android:id="@+id/action_sign_in_frag_to_home_ricerca_3"
+            app:destination="@id/home_ricerca_3" />
     </fragment>
     <fragment
         android:id="@+id/welcome"
@@ -34,8 +34,8 @@
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
-            android:id="@+id/action_sign_up_to_ricerca_2"
-            app:destination="@id/ricerca_2" />
+            android:id="@+id/action_sign_up_to_home_ricerca_3"
+            app:destination="@id/home_ricerca_3" />
     </fragment>
     <fragment
         android:id="@+id/utente_operatore"
@@ -82,23 +82,23 @@
             app:destination="@id/descrizione_attivita" />
     </fragment>
     <fragment
-        android:id="@+id/ricerca_2"
-        android:name="com.example.educa.Ricerca_2"
-        android:label="fragment_ricerca_2"
-        tools:layout="@layout/fragment_ricerca_2" >
-        <action
-            android:id="@+id/action_ricerca_2_to_utente_operatore"
-            app:destination="@id/utente_operatore" />
-        <action
-            android:id="@+id/action_ricerca_2_to_lista_attivita"
-            app:destination="@id/lista_attivita" />
-        <action
-            android:id="@+id/action_ricerca_2_to_prova_list_view"
-            app:destination="@id/prova_list_view" />
-    </fragment>
-    <fragment
         android:id="@+id/prova_list_view"
         android:name="com.example.educa.Prova_list_view"
         android:label="fragment_prova_list_view"
         tools:layout="@layout/fragment_prova_list_view" />
+    <fragment
+        android:id="@+id/home_ricerca_3"
+        android:name="com.example.educa.home_ricerca_3"
+        android:label="fragment_home_ricerca_3"
+        tools:layout="@layout/fragment_home_ricerca_3" >
+        <action
+            android:id="@+id/action_home_ricerca_3_to_utente_operatore"
+            app:destination="@id/utente_operatore" />
+        <action
+            android:id="@+id/action_home_ricerca_3_to_prova_list_view"
+            app:destination="@id/prova_list_view" />
+        <action
+            android:id="@+id/action_home_ricerca_3_to_lista_attivita"
+            app:destination="@id/lista_attivita" />
+    </fragment>
 </navigation>

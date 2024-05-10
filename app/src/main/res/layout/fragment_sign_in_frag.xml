@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16sp"
+    android:padding="32sp"
     tools:context=".Sign_in_frag">
 
     <Button
@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_up_crea_account" />
+        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_in_loggati" />
 
     <TextView
         android:id="@+id/Txt_sign_up_tosignin"
@@ -147,15 +147,15 @@
         android:hint="******"
         android:inputType="textPassword"
 
-        app:layout_constraintBottom_toTopOf="@+id/Btn_sign_up_crea_account"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_sign_in_loggati"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Edt_sign_up_email" />
 
     <Button
-        android:id="@+id/Btn_sign_up_crea_account"
-        android:layout_width="354dp"
+        android:id="@+id/Btn_sign_in_loggati"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
@@ -178,5 +178,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_up_crea_account" />
+        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_in_loggati" />
 </androidx.constraintlayout.widget.ConstraintLayout>

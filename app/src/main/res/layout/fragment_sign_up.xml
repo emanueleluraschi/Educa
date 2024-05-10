@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16sp"
+    android:padding="32sp"
     tools:context=".Sign_up">
 
 
@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_up_crea_account" />
+        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_in_loggati" />
 
     <TextView
         android:id="@+id/Txt_sign_up_tosignin"
@@ -105,8 +105,8 @@
     <EditText
         android:id="@+id/Edt_sign_up_email"
         style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
-        android:layout_width="379dp"
-        android:layout_height="54sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
 
         android:hint="mariorossi@gmail.com"
@@ -122,21 +122,21 @@
     <EditText
         android:id="@+id/Edt_sign_up_password"
         style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
-        android:layout_width="379dp"
-        android:layout_height="54sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="******"
         android:inputType="textPassword"
 
-        app:layout_constraintBottom_toTopOf="@+id/Btn_sign_up_crea_account"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_sign_in_loggati"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Edt_sign_up_email" />
 
     <Button
-        android:id="@+id/Btn_sign_up_crea_account"
-        android:layout_width="354dp"
+        android:id="@+id/Btn_sign_in_loggati"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create Account"
         app:layout_constraintBottom_toTopOf="@+id/Txt_sign_up_signingoogleofacebook"
@@ -155,13 +155,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_up_crea_account" />
+        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_in_loggati" />
 
     <EditText
         android:id="@+id/Edt_sign_up_nome"
         style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
-        android:layout_width="379dp"
-        android:layout_height="54sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="nome"
 
