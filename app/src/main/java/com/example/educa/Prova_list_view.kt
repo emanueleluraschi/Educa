@@ -19,16 +19,10 @@ class Prova_list_view : Fragment() {
         val view = inflater.inflate(R.layout.fragment_prova_list_view, container, false)
 
         val listView = view.findViewById<ListView>(R.id.lst_lista_prova_lista)
-        val data = arrayOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
-        listView.adapter  = ArrayAdapter(requireContext(), R.layout.elementodilista, data)
-        listView.setOnItemClickListener { parent, view, position, id ->
-            Toast.makeText(
-                requireContext(),
-                "Item selezionato: ${data[position]}",
-                Toast.LENGTH_SHORT
-            ).show()
+        val data = arrayOf("pippo", "paperino", "pluto", "minni", "zio paperone")
+        listView.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, data)
 
-        }
+
 
         return view
     }
