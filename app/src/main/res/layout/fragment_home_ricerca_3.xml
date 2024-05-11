@@ -8,11 +8,13 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Flt_home_ricerca_a_ricerca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="72sp"
+        android:layout_width="72sp"
         android:contentDescription="Ricerca"
         android:clickable="true"
-        android:src="@drawable/baseline_search_96"
+        android:src="@drawable/baseline_search_120"
+        app:maxImageSize="48sp"
+        app:fabCustomSize="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
