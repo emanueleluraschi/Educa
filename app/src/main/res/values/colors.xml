@@ -22,6 +22,7 @@
     <color name="md_theme_primaryContainer">#C5E7FF</color>
     <color name="md_theme_onPrimaryContainer">#001E2D</color>
     <color name="md_theme_secondary">#4E616D</color>
+    <color name="color_action_bar_icon">#4E616D</color>
     <color name="md_theme_onSecondary">#FFFFFF</color>
     <color name="md_theme_secondaryContainer">#D2E5F4</color>
     <color name="md_theme_onSecondaryContainer">#0A1E28</color>
@@ -158,6 +159,8 @@
     <color name="md_theme_surfaceContainer_highContrast">#EBEEF3</color>
     <color name="md_theme_surfaceContainerHigh_highContrast">#E5E8ED</color>
     <color name="md_theme_surfaceContainerHighest_highContrast">#DFE3E7</color>
+    <color name="trasparent">#00000000</color>
+
 
 
 </resources>

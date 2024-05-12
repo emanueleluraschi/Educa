@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/home_ricerca"
+            android:icon="@drawable/search_48_home"
+            android:title="" />
+
+        <item
+            android:id="@+id/attività_salvate_home"
+            android:icon="@drawable/saved_search_48"
+            android:title="" />
+        <item
+            android:id="@+id/account_home"
+            android:icon="@drawable/baseline_person_48"
+            android:title="" />
+        <item
+            android:id="@+id/miei_utenti_home"
+            android:icon="@drawable/baseline_contacts_48"
+            android:title="" />
+
+</menu>
