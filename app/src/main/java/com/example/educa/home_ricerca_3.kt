@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -24,6 +26,23 @@ class home_ricerca_3 : Fragment() {
             view.findNavController().navigate(R.id.action_home_ricerca_3_to_prova_list_view)
         }
 
+        val opzionieta = arrayOf("2", "3", "4", "5")
+        val adaptereta = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opzionieta)
+
+        adaptereta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val spinnereta = view.findViewById<Spinner>(R.id.Spn_ricerca_eta)
+
+        spinnereta.adapter = adaptereta
+        spinnereta.background= ContextCompat.getDrawable(requireContext(), R.drawable.spinner_background_ricerca)
+
+        spinnereta.prompt= "Selezione l'età"
+
+        val opzioniobiettiviti = arrayOf("attenzione","propriocezione", "consapevolezza")
+        val adapterobiettivi = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item,opzioniobiettiviti)
+        adapterobiettivi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val spinnerobiettivi= view.findViewById<Spinner>(R.id.Spn_ricerca_obiettivo)
+        spinnerobiettivi.adapter = adapterobiettivi
+        spinnerobiettivi.prompt= "Selezione l'obiettivo"
 
 
         return view

@@ -8,17 +8,48 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/Flt_home_ricerca_a_ricerca"
-        android:layout_height="72sp"
         android:layout_width="72sp"
-        android:contentDescription="Ricerca"
+        android:layout_height="72sp"
         android:clickable="true"
+        android:contentDescription="Ricerca"
         android:src="@drawable/baseline_search_120"
-        app:maxImageSize="48sp"
         app:fabCustomSize="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.5"
+        app:maxImageSize="48sp" />
+
+    <Spinner
+        android:id="@+id/Spn_ricerca_eta"
+        style="@android:style/Widget.Material.Spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="48sp"
+
+
+        android:minHeight="12sp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/Flt_home_ricerca_a_ricerca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/Spn_ricerca_obiettivo"
+        style="@android:style/Widget.Material.Light.Spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="48sp"
+        android:minHeight="12sp"
+
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/Flt_home_ricerca_a_ricerca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Spn_ricerca_eta" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
