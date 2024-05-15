@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".botton_action_bar_peronsalizzata">
+
+    <ImageButton
+        android:id="@+id/Btn_ricerca"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_marginBottom="32dp"
+
+        android:background="@drawable/trasparente"
+        android:contentDescription="bottone ricerca"
+        android:scaleType="centerInside"
+        android:src="@drawable/search_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Btn_salvate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/Btn_salvate"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+
+        android:background="@drawable/trasparente"
+        android:contentDescription="bottone attività salvate"
+        android:scaleType="centerInside"
+        android:src="@drawable/saved_search_24"
+        app:layout_constraintEnd_toStartOf="@+id/Btn_account"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Btn_ricerca"
+        app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
+
+    <ImageButton
+        android:id="@+id/Btn_account"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:background="@drawable/trasparente"
+        android:contentDescription="bottone account"
+        android:scaleType="centerInside"
+        android:src="@drawable/person_24"
+        app:layout_constraintEnd_toStartOf="@+id/Btn_utenti"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Btn_salvate"
+        app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
+
+    <ImageButton
+        android:id="@+id/Btn_utenti"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:background="@drawable/trasparente"
+        android:contentDescription="bottone utenti"
+        android:scaleType="centerInside"
+        android:src="@drawable/contacts_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Btn_account"
+        app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
+
+    <TextView
+        android:id="@+id/TxT_ricerca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  ricerca"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/Btn_ricerca"
+        app:layout_constraintStart_toStartOf="@+id/Btn_ricerca"
+        app:layout_constraintTop_toBottomOf="@+id/Btn_ricerca" />
+
+    <TextView
+        android:id="@+id/Txt_salvate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="salvate"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/Btn_salvate"
+        app:layout_constraintStart_toStartOf="@+id/Btn_salvate"
+        app:layout_constraintTop_toTopOf="@+id/TxT_ricerca" />
+
+    <TextView
+        android:id="@+id/Txt_accout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="account"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/Btn_account"
+        app:layout_constraintStart_toStartOf="@+id/Btn_account"
+        app:layout_constraintTop_toTopOf="@+id/Txt_salvate" />
+
+    <TextView
+        android:id="@+id/Txt_utenti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="utenti  "
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/Btn_utenti"
+        app:layout_constraintStart_toStartOf="@+id/Btn_utenti"
+        app:layout_constraintTop_toTopOf="@+id/Txt_accout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

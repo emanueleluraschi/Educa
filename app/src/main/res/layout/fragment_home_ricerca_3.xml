@@ -7,53 +7,15 @@
     android:padding="8sp"
     tools:context=".home_ricerca_3">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/Flt_home_ricerca_a_ricerca"
-        android:layout_width="72sp"
-        android:layout_height="72sp"
-        android:backgroundTint="@color/primarycolor"
-        android:clickable="true"
-        android:contentDescription="Ricerca"
-        android:src="@drawable/baseline_search_48_celeste"
-        app:fabCustomSize="72dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView2"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:maxImageSize="48sp"
-        app:tint="#FFC5E7FF" />
-
-    <Spinner
-        android:id="@+id/Spn_ricerca_obiettivo"
-        style="@android:style/Widget.Spinner"
-        android:layout_width="0dp"
-        android:layout_height="48sp"
-
-
-        android:layout_marginStart="16dp"
-
-        android:layout_marginTop="16dp"
-        android:background="@drawable/spinner_background_ricerca"
-        android:contextClickable="true"
-        android:spinnerMode="dropdown"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/Spn_ricerca_eta"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002" />
-
     <Spinner
         android:id="@+id/Spn_ricerca_eta"
         style="@android:style/Widget.Material.Spinner"
         android:layout_width="0dp"
         android:layout_height="48sp"
+
+
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
-
-
         android:background="@drawable/spinner_background_ricerca"
         android:contentDescription="@string/Eta"
         android:prompt="@string/Eta"
@@ -67,8 +29,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="320dp"
-        android:layout_height="315dp"
+        android:layout_width="283dp"
+        android:layout_height="268dp"
         android:src="@drawable/ricerca_immagine_prova"
         app:layout_constraintBottom_toTopOf="@+id/Flt_home_ricerca_a_ricerca"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,22 +47,179 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/trasparente"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Flt_home_ricerca_a_ricerca"
+        android:layout_width="72sp"
+        android:layout_height="72sp"
+        android:backgroundTint="@color/primarycolor"
+        android:clickable="true"
+        android:contentDescription="Ricerca"
 
-        android:isScrollContainer="true"
+        android:src="@drawable/baseline_search_48_celeste"
+        app:fabCustomSize="72dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:maxImageSize="48sp"
+        app:tint="#FFC5E7FF" />
+
+    <Spinner
+        android:id="@+id/Spn_ricerca_obiettivo"
+        style="@android:style/Widget.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="48sp"
 
 
-        app:itemIconSize="36sp"
-        app:itemIconTint="@color/md_theme_outline"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/spinner_background_ricerca"
+        android:contextClickable="true"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/Spn_ricerca_eta"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35000002" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        style="@android:style/Widget.Material.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="48sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/spinner_background_ricerca"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/spinner3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Spn_ricerca_obiettivo" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        style="@android:style/Widget.Material.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="48sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/spinner_background_ricerca"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/spinner2"
+        app:layout_constraintTop_toTopOf="@+id/spinner2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_action_bar_2" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/Btn_ricerca"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+
+            android:background="@drawable/trasparente"
+            android:contentDescription="bottone ricerca"
+            android:scaleType="centerInside"
+            android:src="@drawable/search_24"
+            app:layout_constraintEnd_toStartOf="@+id/Btn_salvate"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/Btn_salvate"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+
+            android:background="@drawable/trasparente"
+            android:contentDescription="bottone attività salvate"
+            android:scaleType="centerInside"
+            android:src="@drawable/saved_search_24"
+            app:layout_constraintEnd_toStartOf="@+id/Btn_account"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Btn_ricerca"
+            app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
+
+        <ImageButton
+            android:id="@+id/Btn_account"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:background="@drawable/trasparente"
+            android:contentDescription="bottone account"
+            android:scaleType="centerInside"
+            android:src="@drawable/person_24"
+            app:layout_constraintEnd_toStartOf="@+id/Btn_utenti"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Btn_salvate"
+            app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
+
+        <ImageButton
+            android:id="@+id/Btn_utenti"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:background="@drawable/trasparente"
+            android:contentDescription="bottone utenti"
+            android:scaleType="centerInside"
+            android:src="@drawable/contacts_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Btn_account"
+            app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
+
+        <TextView
+            android:id="@+id/Txt_salvate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="salvate"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/Btn_salvate"
+            app:layout_constraintStart_toStartOf="@+id/Btn_salvate"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_salvate" />
+
+        <TextView
+            android:id="@+id/TxT_ricerca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  ricerca"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/Btn_ricerca"
+            app:layout_constraintStart_toStartOf="@+id/Btn_ricerca"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_ricerca" />
+
+        <TextView
+            android:id="@+id/Txt_utenti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="utenti  "
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/Btn_utenti"
+            app:layout_constraintStart_toStartOf="@+id/Btn_utenti"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_utenti" />
+
+        <TextView
+            android:id="@+id/Txt_accout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="account"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/Btn_account"
+            app:layout_constraintStart_toStartOf="@+id/Btn_account"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_account" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

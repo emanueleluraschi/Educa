@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_sign_up_to_home_ricerca_3"
             app:destination="@id/home_ricerca_3" />
+        <action
+            android:id="@+id/action_sign_up_to_sign_in_frag"
+            app:destination="@id/sign_in_frag" />
     </fragment>
     <fragment
         android:id="@+id/utente_operatore"
@@ -100,5 +103,27 @@
         <action
             android:id="@+id/action_home_ricerca_3_to_lista_attivita"
             app:destination="@id/lista_attivita" />
+        <action
+            android:id="@+id/action_home_ricerca_3_to_attivita_novita"
+            app:destination="@id/attivita_novita" />
+        <action
+            android:id="@+id/action_home_ricerca_3_to_account"
+            app:destination="@id/account" />
+        <action
+            android:id="@+id/action_home_ricerca_3_to_attivita_salvate"
+            app:destination="@id/attivita_salvate" />
+        <action
+            android:id="@+id/action_home_ricerca_3_to_miei_utenti_bambini"
+            app:destination="@id/miei_utenti_bambini" />
     </fragment>
+    <fragment
+        android:id="@+id/account"
+        android:name="com.example.educa.Account"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/botton_action_bar_peronsalizzata"
+        android:name="com.example.educa.botton_action_bar_peronsalizzata"
+        android:label="fragment_botton_action_bar_peronsalizzata"
+        tools:layout="@layout/fragment_botton_action_bar_peronsalizzata" />
 </navigation>
