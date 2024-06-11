@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Attivita_salvate">
 
     <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/Btn_ricerca"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+
+            android:background="@drawable/trasparente"
+            android:contentDescription="bottone ricerca"
+            android:scaleType="centerInside"
+            android:src="@drawable/search_24"
+            app:layout_constraintEnd_toStartOf="@+id/Btn_salvate"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/Btn_salvate"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+
+            android:background="@drawable/trasparente"
+            android:contentDescription="bottone attività salvate"
+            android:scaleType="centerInside"
+            android:src="@drawable/saved_search_24"
+            app:layout_constraintEnd_toStartOf="@+id/Btn_account"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Btn_ricerca"
+            app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
+
+        <ImageButton
+            android:id="@+id/Btn_account"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:background="@drawable/trasparente"
+            android:contentDescription="bottone account"
+            android:scaleType="centerInside"
+            android:src="@drawable/person_24"
+            app:layout_constraintEnd_toStartOf="@+id/Btn_utenti"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Btn_salvate"
+            app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
+
+        <ImageButton
+            android:id="@+id/Btn_utenti"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:background="@drawable/trasparente"
+            android:contentDescription="bottone utenti"
+            android:scaleType="centerInside"
+            android:src="@drawable/contacts_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/Btn_account"
+            app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
+
+        <TextView
+            android:id="@+id/Txt_salvate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="salvate"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/Btn_salvate"
+            app:layout_constraintStart_toStartOf="@+id/Btn_salvate"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_salvate" />
+
+        <TextView
+            android:id="@+id/TxT_ricerca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  ricerca"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/Btn_ricerca"
+            app:layout_constraintStart_toStartOf="@+id/Btn_ricerca"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_ricerca" />
+
+        <TextView
+            android:id="@+id/Txt_utenti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="utenti  "
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/Btn_utenti"
+            app:layout_constraintStart_toStartOf="@+id/Btn_utenti"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_utenti" />
+
+        <TextView
+            android:id="@+id/Txt_accout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="account"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/Btn_account"
+            app:layout_constraintStart_toStartOf="@+id/Btn_account"
+            app:layout_constraintTop_toBottomOf="@+id/Btn_account" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

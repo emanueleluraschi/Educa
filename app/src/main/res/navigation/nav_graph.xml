@@ -46,27 +46,30 @@
         android:label="fragment_utente"
         tools:layout="@layout/fragment_utente_operatore" >
         <action
-            android:id="@+id/action_utente_to_attivita_salvate"
-            app:destination="@id/attivita_salvate" />
-        <action
             android:id="@+id/action_utente_operatore_to_miei_utenti_bambini"
             app:destination="@id/miei_utenti_bambini" />
+        <action
+            android:id="@+id/action_utente_operatore_to_home_ricerca_3"
+            app:destination="@id/home_ricerca_3" />
+        <action
+            android:id="@+id/action_utente_operatore_to_account"
+            app:destination="@id/account" />
     </fragment>
-    <fragment
-        android:id="@+id/attivita_salvate"
-        android:name="com.example.educa.Attivita_salvate"
-        android:label="fragment_attivita_salvate"
-        tools:layout="@layout/fragment_attivita_salvate" />
-    <fragment
-        android:id="@+id/attivita_novita"
-        android:name="com.example.educa.Attivita_novita"
-        android:label="fragment_attivita_novita"
-        tools:layout="@layout/fragment_attivita_novita" />
     <fragment
         android:id="@+id/miei_utenti_bambini"
         android:name="com.example.educa.Miei_utenti_bambini"
         android:label="fragment_miei_utenti_bambini"
-        tools:layout="@layout/fragment_miei_utenti_bambini" />
+        tools:layout="@layout/fragment_miei_utenti_bambini" >
+        <action
+            android:id="@+id/action_miei_utenti_bambini_to_account"
+            app:destination="@id/account" />
+        <action
+            android:id="@+id/action_miei_utenti_bambini_to_home_ricerca_3"
+            app:destination="@id/home_ricerca_3" />
+        <action
+            android:id="@+id/action_miei_utenti_bambini_to_lista_attivita"
+            app:destination="@id/lista_attivita" />
+    </fragment>
     <fragment
         android:id="@+id/descrizione_attivita"
         android:name="com.example.educa.Descrizione_attivita"
@@ -78,11 +81,17 @@
         android:label="fragment_lista_attivita"
         tools:layout="@layout/fragment_lista_attivita" >
         <action
-            android:id="@+id/action_lista_attivita_to_attivita_salvate"
-            app:destination="@id/attivita_salvate" />
-        <action
             android:id="@+id/action_lista_attivita_to_descrizione_attivita"
             app:destination="@id/descrizione_attivita" />
+        <action
+            android:id="@+id/action_lista_attivita_to_miei_utenti_bambini"
+            app:destination="@id/miei_utenti_bambini" />
+        <action
+            android:id="@+id/action_lista_attivita_to_account"
+            app:destination="@id/account" />
+        <action
+            android:id="@+id/action_lista_attivita_to_home_ricerca_3"
+            app:destination="@id/home_ricerca_3" />
     </fragment>
     <fragment
         android:id="@+id/prova_list_view"
@@ -95,32 +104,33 @@
         android:label="fragment_home_ricerca_3"
         tools:layout="@layout/fragment_home_ricerca_3" >
         <action
-            android:id="@+id/action_home_ricerca_3_to_utente_operatore"
-            app:destination="@id/utente_operatore" />
-        <action
             android:id="@+id/action_home_ricerca_3_to_prova_list_view"
             app:destination="@id/prova_list_view" />
         <action
             android:id="@+id/action_home_ricerca_3_to_lista_attivita"
             app:destination="@id/lista_attivita" />
         <action
-            android:id="@+id/action_home_ricerca_3_to_attivita_novita"
-            app:destination="@id/attivita_novita" />
-        <action
             android:id="@+id/action_home_ricerca_3_to_account"
             app:destination="@id/account" />
         <action
-            android:id="@+id/action_home_ricerca_3_to_attivita_salvate"
-            app:destination="@id/attivita_salvate" />
-        <action
             android:id="@+id/action_home_ricerca_3_to_miei_utenti_bambini"
             app:destination="@id/miei_utenti_bambini" />
+        <action
+            android:id="@+id/action_home_ricerca_3_to_lista_attivita2"
+            app:destination="@id/lista_attivita" />
     </fragment>
     <fragment
         android:id="@+id/account"
         android:name="com.example.educa.Account"
         android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_account_to_home_ricerca_3"
+            app:destination="@id/home_ricerca_3" />
+        <action
+            android:id="@+id/action_account_to_lista_attivita"
+            app:destination="@id/lista_attivita" />
+    </fragment>
     <fragment
         android:id="@+id/botton_action_bar_peronsalizzata"
         android:name="com.example.educa.botton_action_bar_peronsalizzata"
