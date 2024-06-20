@@ -69,6 +69,7 @@
         <action
             android:id="@+id/action_miei_utenti_bambini_to_lista_attivita"
             app:destination="@id/lista_attivita" />
+
     </fragment>
     <fragment
         android:id="@+id/descrizione_attivita"
@@ -127,6 +128,9 @@
         <action
             android:id="@+id/action_account_to_lista_attivita"
             app:destination="@id/lista_attivita" />
+        <action
+            android:id="@+id/action_account_to_miei_utenti_bambini"
+            app:destination="@id/miei_utenti_bambini" />
     </fragment>
     <fragment
         android:id="@+id/botton_action_bar_peronsalizzata"
