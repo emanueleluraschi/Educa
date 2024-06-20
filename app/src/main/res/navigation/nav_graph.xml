@@ -110,14 +110,11 @@
             android:id="@+id/action_home_ricerca_3_to_lista_attivita"
             app:destination="@id/lista_attivita" />
         <action
-            android:id="@+id/action_home_ricerca_3_to_account"
-            app:destination="@id/account" />
-        <action
-            android:id="@+id/action_home_ricerca_3_to_miei_utenti_bambini"
+            android:id="@+id/action_home_ricerca_3_to_miei_utenti"
             app:destination="@id/miei_utenti_bambini" />
         <action
-            android:id="@+id/action_home_ricerca_3_to_lista_attivita2"
-            app:destination="@id/lista_attivita" />
+            android:id="@+id/action_home_ricerca_3_to_account"
+            app:destination="@id/account" />
     </fragment>
     <fragment
         android:id="@+id/account"
