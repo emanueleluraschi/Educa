@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.educa.Adapter.ActivityAdapter
 import com.example.educa.R
+import com.example.educa.SpacesItemDecoration
 import com.example.educa.db.dao.ActivityDao
 
 class Attivita_ritornate : Fragment() {
@@ -35,7 +36,7 @@ class Attivita_ritornate : Fragment() {
         activityAdapter.updateActivities(activities)
 
 
-
+        recyclerView.addItemDecoration(SpacesItemDecoration(10))
 
 
         return view
