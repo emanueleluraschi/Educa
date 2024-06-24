@@ -39,7 +39,17 @@ class ActivityDao(private val context: Context) {
         db.close()
     }
 
-
+    fun getActivitiesByQuery(query: String): List<Activity> {
+        val db = dbHelper.readableDatabase
+        val cursor: Cursor = db.rawQuery(query, null)
+        val activities = mutableListOf<Activity>()
+        while (cursor.moveToNext()) {
+            activities.add(createActivityFromCursor(cursor))
+        }
+        cursor.close()
+        db.close()
+        return activities
+    }
 
     fun getAllActivities(): List<Activity> {
         val db = dbHelper.readableDatabase

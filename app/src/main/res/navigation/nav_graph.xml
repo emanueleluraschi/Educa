@@ -102,6 +102,11 @@
         <action
             android:id="@+id/action_Attivita_ritornate_to_descrizione_attivita"
             app:destination="@id/descrizione_attivita" />
+        <argument
+            android:name="comando "
+            app:argType="string"
+            android:defaultValue='""' />
+
     </fragment>
     <fragment
         android:id="@+id/home_ricerca_3"
@@ -119,7 +124,13 @@
             app:destination="@id/account" />
         <action
             android:id="@+id/action_home_ricerca_3_to_Attivita_ritornate"
-            app:destination="@id/Attivita_ritornate" />
+            app:destination="@id/Attivita_ritornate"
+            >
+            <argument
+                android:name="query"
+                app:argType="string"/>
+
+        </action>
     </fragment>
     <fragment
         android:id="@+id/account"

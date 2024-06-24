@@ -1,6 +1,7 @@
 package com.example.educa.Fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import android.widget.Spinner
+import androidx.core.os.bundleOf
 
 import androidx.navigation.findNavController
 import com.example.educa.R
@@ -25,11 +27,7 @@ class home_ricerca_3 : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home_ricerca_3, container, false)
 
-        val btn_ricerca = view.findViewById<FloatingActionButton>(R.id.Flt_home_ricerca_a_ricerca)
 
-        btn_ricerca.setOnClickListener {
-            view.findNavController().navigate(R.id.action_home_ricerca_3_to_Attivita_ritornate)
-        }
 
         val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
         val btn_listasalvate= view.findViewById<ImageButton>(R.id.Btn_salvate)
@@ -74,7 +72,7 @@ class home_ricerca_3 : Fragment() {
         spinnerEta.adapter = adapterEta
 
 
-        val opzioniGruppoSingolo = arrayOf("Modalità","Singolo", "Gruppo")
+        val opzioniGruppoSingolo = arrayOf("Modalità","Gruppo", "Singolo")
         val adapterGruppoSingolo = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opzioniGruppoSingolo)
         adapterGruppoSingolo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         val spinnerGruppoSingolo = view.findViewById<Spinner>(R.id.Spn_ricerca_gruppo_singolo)
@@ -110,10 +108,54 @@ class home_ricerca_3 : Fragment() {
         // Imposta l'adapter sullo Spinner
         val spinnerObiettivi = view.findViewById<Spinner>(R.id.Spn_ricerca_obiettivo)
         spinnerObiettivi.adapter = adapterObiettivi
+        val btn_ricerca = view.findViewById<FloatingActionButton>(R.id.Flt_home_ricerca_a_ricerca)
 
+        btn_ricerca.setOnClickListener {
+            // Costruisci la query basandoti sulle selezioni dei Spinner
+            val query = buildQuery(spinnerEta, spinnerGruppoSingolo, spinnerTools, spinnerObiettivi)
+            // Crea un Bundle con la query
+
+            view.findNavController().navigate(R.id.action_home_ricerca_3_to_Attivita_ritornate, bundleOf("comando" to query)
+            )
+        }
 
 
         return view
+    }
+    private fun buildQuery(spinnerEta: Spinner, spinnerGruppoSingolo: Spinner, spinnerTools: Spinner, spinnerObiettivi: Spinner): String {
+        val selectedAge = spinnerEta.selectedItem.toString()
+        val selectedMode = spinnerGruppoSingolo.selectedItem.toString()
+        val selectedTool = spinnerTools.selectedItem.toString()
+        val selectedObjective = spinnerObiettivi.selectedItem.toString()
+
+        var query = "SELECT DISTINCT A.name FROM Activities A"
+        val conditions = mutableListOf<String>()
+
+        if (selectedAge != "Età") {
+            conditions.add("A.age = $selectedAge")
+        }
+        if (selectedMode != "Modalità") {
+            when (selectedMode) {
+                "Gruppo" -> conditions.add("A.is_for_group = 1")
+                "Singolo" -> conditions.add("A.is_for_single = 1")
+                // Nessuna condizione se "Modalità" è selezionato
+            }
+        }
+        if (selectedTool != "Materiale") {
+            query += " JOIN Activity_Tools AT ON A.name = AT.activity_name"
+            conditions.add("AT.tool_name = '$selectedTool'")
+        }
+        if (selectedObjective != "Obiettivo") {
+            query += " JOIN Activity_Objectives AO ON A.name = AO.activity_name"
+            conditions.add("AO.objective_name = '$selectedObjective'")
+        }
+
+        if (conditions.isNotEmpty()) {
+            query += " WHERE " + conditions.joinToString(" AND ")
+        }
+
+        Log.d("home_ricerca_3", "Query costruita: $query")
+        return query
     }
 
 
