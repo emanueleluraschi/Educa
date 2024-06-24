@@ -1,4 +1,4 @@
-package com.example.educa
+package com.example.educa.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.educa.R
 
 
 class Lista_attivita : Fragment() {

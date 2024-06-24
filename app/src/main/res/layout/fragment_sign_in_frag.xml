@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="32sp"
-    tools:context=".Sign_in_frag">
+    tools:context=".Fragment.Sign_in_frag">
 
     <Button
         android:id="@+id/Btn_sign_up_google"

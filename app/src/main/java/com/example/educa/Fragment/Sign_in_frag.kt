@@ -1,4 +1,4 @@
-package com.example.educa
+package com.example.educa.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.findNavController
+import com.example.educa.R
 
 
 class Sign_in_frag : Fragment() {

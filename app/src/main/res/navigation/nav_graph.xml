@@ -6,7 +6,7 @@
     app:startDestination="@id/welcome">
     <fragment
         android:id="@+id/sign_in_frag"
-        android:name="com.example.educa.Sign_in_frag"
+        android:name="com.example.educa.Fragment.Sign_in_frag"
         android:label="fragment_sign_in_frag"
         tools:layout="@layout/fragment_sign_in_frag" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/welcome"
-        android:name="com.example.educa.Welcome"
+        android:name="com.example.educa.Fragment.Welcome"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/sign_up"
-        android:name="com.example.educa.Sign_up"
+        android:name="com.example.educa.Fragment.Sign_up"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/utente_operatore"
-        android:name="com.example.educa.Utente"
+        android:name="com.example.educa.Fragment.Utente"
         android:label="fragment_utente"
         tools:layout="@layout/fragment_utente_operatore" >
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/miei_utenti_bambini"
-        android:name="com.example.educa.Miei_utenti_bambini"
+        android:name="com.example.educa.Fragment.Miei_utenti_bambini"
         android:label="fragment_miei_utenti_bambini"
         tools:layout="@layout/fragment_miei_utenti_bambini" >
         <action
@@ -73,12 +73,12 @@
     </fragment>
     <fragment
         android:id="@+id/descrizione_attivita"
-        android:name="com.example.educa.Descrizione_attivita"
+        android:name="com.example.educa.Fragment.Descrizione_attivita"
         android:label="fragment_descrizione_attivita"
         tools:layout="@layout/fragment_descrizione_attivita" />
     <fragment
         android:id="@+id/lista_attivita"
-        android:name="com.example.educa.Lista_attivita"
+        android:name="com.example.educa.Fragment.Lista_attivita"
         android:label="fragment_lista_attivita"
         tools:layout="@layout/fragment_lista_attivita" >
         <action
@@ -95,18 +95,19 @@
             app:destination="@id/home_ricerca_3" />
     </fragment>
     <fragment
-        android:id="@+id/prova_list_view"
-        android:name="com.example.educa.Prova_list_view"
-        android:label="fragment_prova_list_view"
-        tools:layout="@layout/fragment_prova_list_view" />
+        android:id="@+id/Attivita_ritornate"
+        android:name="com.example.educa.Fragment.Attivita_ritornate"
+        android:label="Attivita_ritornate_label"
+        tools:layout="@layout/fragment_attivita_ritornate" >
+        <action
+            android:id="@+id/action_Attivita_ritornate_to_descrizione_attivita"
+            app:destination="@id/descrizione_attivita" />
+    </fragment>
     <fragment
         android:id="@+id/home_ricerca_3"
-        android:name="com.example.educa.home_ricerca_3"
+        android:name="com.example.educa.Fragment.home_ricerca_3"
         android:label="fragment_home_ricerca_3"
         tools:layout="@layout/fragment_home_ricerca_3" >
-        <action
-            android:id="@+id/action_home_ricerca_3_to_prova_list_view"
-            app:destination="@id/prova_list_view" />
         <action
             android:id="@+id/action_home_ricerca_3_to_lista_attivita"
             app:destination="@id/lista_attivita" />
@@ -116,10 +117,13 @@
         <action
             android:id="@+id/action_home_ricerca_3_to_account"
             app:destination="@id/account" />
+        <action
+            android:id="@+id/action_home_ricerca_3_to_Attivita_ritornate"
+            app:destination="@id/Attivita_ritornate" />
     </fragment>
     <fragment
         android:id="@+id/account"
-        android:name="com.example.educa.Account"
+        android:name="com.example.educa.Fragment.Account"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" >
         <action

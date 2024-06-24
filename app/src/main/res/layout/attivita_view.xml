@@ -11,7 +11,7 @@
 
 
     <TextView
-        android:id="@+id/Txt_view_singola_attivita_titolo"
+        android:id="@+id/Txt_attivita_titolo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Titolo:"
@@ -20,22 +20,22 @@
         />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/Txt_attivita_durata"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Durata: "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Txt_view_singola_attivita_titolo" />
+        app:layout_constraintTop_toBottomOf="@+id/Txt_attivita_titolo" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/Txt_attivita_descrizione_lunga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Descrizione:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/Txt_attivita_durata" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
@@ -46,13 +46,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/Txt_attivita_descrizione_lunga">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/Txt_attivita_spiegazione_breve"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

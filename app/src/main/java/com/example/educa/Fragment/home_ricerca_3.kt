@@ -1,4 +1,4 @@
-package com.example.educa
+package com.example.educa.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +10,7 @@ import android.widget.ImageButton
 import android.widget.Spinner
 
 import androidx.navigation.findNavController
+import com.example.educa.R
 import com.example.educa.db.dao.ActivityDao
 import com.example.educa.db.dao.ObjectiveDao
 import com.example.educa.db.dao.ToolsDao
@@ -27,7 +28,7 @@ class home_ricerca_3 : Fragment() {
         val btn_ricerca = view.findViewById<FloatingActionButton>(R.id.Flt_home_ricerca_a_ricerca)
 
         btn_ricerca.setOnClickListener {
-            view.findNavController().navigate(R.id.action_home_ricerca_3_to_prova_list_view)
+            view.findNavController().navigate(R.id.action_home_ricerca_3_to_Attivita_ritornate)
         }
 
         val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
@@ -64,7 +65,7 @@ class home_ricerca_3 : Fragment() {
 */
         // 2. Recupera le età distinte dal database
         val activityDao = ActivityDao(requireContext())
-        val ages = activityDao.getDistinctAges()
+        val ages =listOf( "Età")+ activityDao.getDistinctAges()
         // 3. Crea un ArrayAdapter con le età
         val adapterEta = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, ages)
         adapterEta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -100,7 +101,7 @@ class home_ricerca_3 : Fragment() {
         // Recupera gli obiettivi dal database
         val objectiveDao = ObjectiveDao(requireContext())
         val objectives = objectiveDao.getAllObjectives()
-        val objectiveNames = listOf("obiettivo") + objectives.map { it.name }
+        val objectiveNames = listOf("Obiettivo") + objectives.map { it.name }
 
         // Crea un ArrayAdapter con i nomi degli obiettivi
         val adapterObiettivi = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, objectiveNames)

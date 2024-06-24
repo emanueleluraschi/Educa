@@ -1,12 +1,14 @@
-package com.example.educa
+package com.example.educa.Fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.educa.R
 
-class Sign_up : Fragment() {
+
+class Descrizione_attivita : Fragment() {
 
 
     override fun onCreateView(
@@ -14,8 +16,9 @@ class Sign_up : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_sign_up, container, false)
+        val view = inflater.inflate(R.layout.fragment_descrizione_attivita, container, false)
         return view
     }
+
 
 }
