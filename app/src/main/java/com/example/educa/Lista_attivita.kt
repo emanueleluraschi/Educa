@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.RecyclerView
 
 
 class Lista_attivita : Fragment() {
@@ -20,11 +21,21 @@ class Lista_attivita : Fragment() {
         val view = inflater.inflate(R.layout.fragment_lista_attivita, container, false)
 
 
+
+        val rec = view.findViewById<RecyclerView>(R.id.Recycle_layout_attivita_ritornate)
+        //continuare da qui per la recyclerview
+
+
+
+
+
+
+
+        // botton navigation view
         val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
         val btn_listasalvate= view.findViewById<ImageButton>(R.id.Btn_salvate)
         val btn_account = view.findViewById<ImageButton>(R.id.Btn_account)
         val btn_listautenti= view.findViewById<ImageButton>(R.id.Btn_utenti)
-
 
         btn_home.setOnClickListener {
             view.findNavController().navigate(R.id.action_lista_attivita_to_home_ricerca_3)
@@ -35,6 +46,7 @@ class Lista_attivita : Fragment() {
         btn_listautenti.setOnClickListener {
             view.findNavController().navigate(R.id.action_lista_attivita_to_miei_utenti_bambini)
         }
+
         return view
     }
 
