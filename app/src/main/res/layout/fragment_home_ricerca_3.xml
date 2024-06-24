@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/Spn_ricerca_gruppo_singolo"
         style="@android:style/Widget.Material.Spinner"
         android:layout_width="0dp"
         android:layout_height="48sp"
@@ -97,13 +97,13 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/spinner_background_ricerca"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/spinner3"
+        app:layout_constraintEnd_toStartOf="@+id/Spn_ricerca_tools"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Spn_ricerca_obiettivo" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/Spn_ricerca_tools"
         style="@android:style/Widget.Material.Spinner"
         android:layout_width="0dp"
         android:layout_height="48sp"
@@ -111,11 +111,11 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/spinner_background_ricerca"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner2"
+        app:layout_constraintBottom_toBottomOf="@+id/Spn_ricerca_gruppo_singolo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/spinner2"
-        app:layout_constraintTop_toTopOf="@+id/spinner2" />
+        app:layout_constraintStart_toEndOf="@+id/Spn_ricerca_gruppo_singolo"
+        app:layout_constraintTop_toTopOf="@+id/Spn_ricerca_gruppo_singolo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

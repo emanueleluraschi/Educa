@@ -10,6 +10,9 @@ import android.widget.ImageButton
 import android.widget.Spinner
 
 import androidx.navigation.findNavController
+import com.example.educa.db.dao.ActivityDao
+import com.example.educa.db.dao.ObjectiveDao
+import com.example.educa.db.dao.ToolsDao
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class home_ricerca_3 : Fragment() {
@@ -45,7 +48,7 @@ class home_ricerca_3 : Fragment() {
 
 
 
-
+/*
 
         val opzionieta = arrayOf("2", "3", "4", "5")
         val adaptereta = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opzionieta)
@@ -58,13 +61,54 @@ class home_ricerca_3 : Fragment() {
         spinnereta.adapter = adaptereta
 
 
+*/
+        // 2. Recupera le età distinte dal database
+        val activityDao = ActivityDao(requireContext())
+        val ages = activityDao.getDistinctAges()
+        // 3. Crea un ArrayAdapter con le età
+        val adapterEta = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, ages)
+        adapterEta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        // 4. Imposta l'adapter sullo Spinner
+        val spinnerEta = view.findViewById<Spinner>(R.id.Spn_ricerca_eta)
+        spinnerEta.adapter = adapterEta
 
 
-        val opzioniobiettiviti = arrayOf("attenzione","propriocezione", "consapevolezza")
+        val opzioniGruppoSingolo = arrayOf("Modalità","Singolo", "Gruppo")
+        val adapterGruppoSingolo = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opzioniGruppoSingolo)
+        adapterGruppoSingolo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val spinnerGruppoSingolo = view.findViewById<Spinner>(R.id.Spn_ricerca_gruppo_singolo)
+        spinnerGruppoSingolo.adapter = adapterGruppoSingolo
+
+        val toolsDao = ToolsDao(requireContext())
+        //val tools = toolsDao.getAllTools()
+        //val toolNames = tools.map { it.name }
+        //adapter per spinner tool
+        val toolNames = listOf("Materiale") + toolsDao.getAllTools().map { it.name } // Aggiungi "Materiale" all'inizio
+        val adapterTools = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, toolNames)
+        adapterTools.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val spinnerTools = view.findViewById<Spinner>(R.id.Spn_ricerca_tools)
+        spinnerTools.adapter = adapterTools
+
+
+        /*val opzioniobiettiviti = arrayOf("obiettivo","attenzione","propriocezione", "consapevolezza")
         val adapterobiettivi = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item,opzioniobiettiviti)
         adapterobiettivi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         val spinnerobiettivi= view.findViewById<Spinner>(R.id.Spn_ricerca_obiettivo)
         spinnerobiettivi.adapter = adapterobiettivi
+
+*/
+        // Recupera gli obiettivi dal database
+        val objectiveDao = ObjectiveDao(requireContext())
+        val objectives = objectiveDao.getAllObjectives()
+        val objectiveNames = listOf("obiettivo") + objectives.map { it.name }
+
+        // Crea un ArrayAdapter con i nomi degli obiettivi
+        val adapterObiettivi = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, objectiveNames)
+        adapterObiettivi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        // Imposta l'adapter sullo Spinner
+        val spinnerObiettivi = view.findViewById<Spinner>(R.id.Spn_ricerca_obiettivo)
+        spinnerObiettivi.adapter = adapterObiettivi
 
 
 

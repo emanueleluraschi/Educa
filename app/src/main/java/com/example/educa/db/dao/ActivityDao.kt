@@ -269,4 +269,15 @@ private fun createActivityFromCursor(cursor: Cursor): Activity {
         db.close()
         return exists
     }
+    fun getDistinctAges(): List<Int> {
+        val db = dbHelper.readableDatabase
+        val cursor = db.rawQuery("SELECT DISTINCT age FROM Activities", null)
+        val ages = mutableListOf<Int>()
+        while (cursor.moveToNext()) {
+            ages.add(cursor.getInt(0))
+        }
+        cursor.close()
+        db.close()
+        return ages
+    }
 }
