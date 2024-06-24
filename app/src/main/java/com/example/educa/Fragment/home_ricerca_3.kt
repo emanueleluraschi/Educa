@@ -9,10 +9,11 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import android.widget.Spinner
-import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
 
 import androidx.navigation.findNavController
 import com.example.educa.R
+import com.example.educa.SharedViewModel
 import com.example.educa.db.dao.ActivityDao
 import com.example.educa.db.dao.ObjectiveDao
 import com.example.educa.db.dao.ToolsDao
@@ -111,18 +112,24 @@ class home_ricerca_3 : Fragment() {
         val btn_ricerca = view.findViewById<FloatingActionButton>(R.id.Flt_home_ricerca_a_ricerca)
 
         btn_ricerca.setOnClickListener {
-            // Costruisci la query basandoti sulle selezioni dei Spinner
-            val query = buildQuery(spinnerEta, spinnerGruppoSingolo, spinnerTools, spinnerObiettivi)
-            // Crea un Bundle con la query
 
-            view.findNavController().navigate(R.id.action_home_ricerca_3_to_Attivita_ritornate, bundleOf("comando" to query)
-            )
+            val viewModel: SharedViewModel by activityViewModels()
+
+            val activityNames = buildQuery(spinnerEta, spinnerGruppoSingolo, spinnerTools, spinnerObiettivi)
+
+            // Imposta la lista di nomi nel ViewModel
+            viewModel.activityNames.value = activityNames
+
+
+            view.findNavController().navigate(R.id.action_home_ricerca_3_to_Attivita_ritornate)
+
         }
 
 
         return view
     }
-    private fun buildQuery(spinnerEta: Spinner, spinnerGruppoSingolo: Spinner, spinnerTools: Spinner, spinnerObiettivi: Spinner): String {
+    private fun buildQuery(spinnerEta: Spinner, spinnerGruppoSingolo:
+    Spinner, spinnerTools: Spinner, spinnerObiettivi: Spinner): List<String> {
         val selectedAge = spinnerEta.selectedItem.toString()
         val selectedMode = spinnerGruppoSingolo.selectedItem.toString()
         val selectedTool = spinnerTools.selectedItem.toString()
@@ -154,8 +161,9 @@ class home_ricerca_3 : Fragment() {
             query += " WHERE " + conditions.joinToString(" AND ")
         }
 
-        Log.d("home_ricerca_3", "Query costruita: $query")
-        return query
+        // Esegui la query e ottieni i nomi delle attività
+        val activityDao = ActivityDao(requireContext())
+        return activityDao.getActivitiesByQuery(query) // Restituisci direttamente la lista di nomi Restituisci una lista di nomi
     }
 
 

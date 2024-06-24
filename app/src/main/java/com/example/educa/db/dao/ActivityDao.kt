@@ -39,18 +39,17 @@ class ActivityDao(private val context: Context) {
         db.close()
     }
 
-    fun getActivitiesByQuery(query: String): List<Activity> {
+    fun getActivitiesByQuery(query: String): List<String> {
         val db = dbHelper.readableDatabase
         val cursor: Cursor = db.rawQuery(query, null)
-        val activities = mutableListOf<Activity>()
+        val activityNames = mutableListOf<String>()
         while (cursor.moveToNext()) {
-            activities.add(createActivityFromCursor(cursor))
+            activityNames.add(cursor.getString(cursor.getColumnIndexOrThrow("name")))
         }
         cursor.close()
         db.close()
-        return activities
+        return activityNames
     }
-
     fun getAllActivities(): List<Activity> {
         val db = dbHelper.readableDatabase
         val cursor: Cursor = db.query("Activities", null, null, null, null, null, null)
@@ -63,7 +62,7 @@ class ActivityDao(private val context: Context) {
         return activities
     }
 
-    fun getActivityByName(name: String): Activity? {
+    fun getActivityByName(name: String): MutableList<Activity> {
         val db = dbHelper.readableDatabase
         val cursor: Cursor = db.query(
             "Activities",
@@ -74,13 +73,13 @@ class ActivityDao(private val context: Context) {
             null,
             null
         )
-        var activity: Activity? = null
-        if (cursor.moveToFirst()) {
-            activity = createActivityFromCursor(cursor)
+        val activities = mutableListOf<Activity>()
+        while (cursor.moveToNext()) {
+            activities.add(createActivityFromCursor(cursor))
         }
         cursor.close()
         db.close()
-        return activity
+        return activities
     }
     fun isFavorite(name: String): Boolean {
         val db = dbHelper.readableDatabase
