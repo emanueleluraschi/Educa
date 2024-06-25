@@ -4,7 +4,7 @@ package com.example.educa.db.entities
 data class Activity(
     val name: String,
     val age: Int,
-    val isFavorite: Boolean,
+    var isFavorite: Boolean,
     val isForGroup: Boolean,
     val isForSingle: Boolean,
     val descriptionShort: String,

@@ -7,8 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.educa.Adapter.FavoriteActivityAdapter
 import com.example.educa.R
+import com.example.educa.SpacesItemDecoration
+import com.example.educa.db.dao.ActivityDao
 
 
 class Lista_attivita : Fragment() {
@@ -26,10 +30,16 @@ class Lista_attivita : Fragment() {
         val rec = view.findViewById<RecyclerView>(R.id.Recycle_layout_attivita_ritornate)
         //continuare da qui per la recyclerview
 
+        val activityDao = ActivityDao(requireContext())
+        val favoriteActivity = activityDao.getFavoriteActivities()
+        val adapter = FavoriteActivityAdapter(favoriteActivity)
+        rec.adapter = adapter
+        rec.layoutManager = LinearLayoutManager(requireContext())
 
 
 
 
+        rec.addItemDecoration(SpacesItemDecoration(10))
 
 
         // botton navigation view

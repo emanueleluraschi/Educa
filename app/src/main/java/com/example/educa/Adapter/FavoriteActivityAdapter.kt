@@ -1,6 +1,5 @@
 package com.example.educa.Adapter
 
-
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,7 +11,12 @@ import com.example.educa.ViewHolder.ActivityViewHolder
 import com.example.educa.db.dao.ActivityDao
 import com.example.educa.db.entities.Activity
 
-class ActivityAdapter(private var activities: List<Activity>) : // Sostituisci "Activity" con la tua classe
+
+
+
+class FavoriteActivityAdapter(
+    private var activities: List<Activity>
+) : // Sostituisci "Activity" con la tua classe
     RecyclerView.Adapter<ActivityViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActivityViewHolder {
@@ -28,23 +32,23 @@ class ActivityAdapter(private var activities: List<Activity>) : // Sostituisci "
 
 
         holder.spiegazioneTextView.text = activity.descriptionShort ?: "" // Usa descriptionLong se disponibile, altrimenti una stringa vuota
-        holder.itemView.setOnClickListener{
+        holder.spiegazioneTextView.setOnClickListener {
             Log.d("ActivityAdapter", "Descrizione cliccata per ${activity.name}")
             SharedViewModel.selectedActivity.value = activity
-            it.findNavController().navigate(R.id.action_Attivita_ritornate_to_descrizione_attivita)
+            it.findNavController().navigate(R.id.action_lista_attivita_to_descrizione_attivita) // Sostituisci con l'ID corretto della tua azione di navigazione
         }
         holder.starImage.setImageResource(if (activity.isFavorite) R.drawable.baseline_star_48 else R.drawable.baseline_star_border_48)
-        holder.starImage.setOnClickListener {
+        holder.itemView.setOnClickListener {
             // Gestisci il clic su un pulsante di star
             val activityDao = ActivityDao(holder.itemView.context)
             val isFavorite = activityDao.isFavorite(activity.name)
             activityDao.setFavorite(activity.name, !isFavorite)
             holder.starImage.setImageResource(if (isFavorite) R.drawable.baseline_star_border_48 else R.drawable.baseline_star_48)
-            activities = activities.toMutableList().apply {
-                this[position] = activity.copy(isFavorite = !isFavorite)
-            }
 
+            val newActivities = activityDao.getAllActivities()
+            updateActivities(newActivities)
         }
+
 
     }
 
