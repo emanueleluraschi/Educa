@@ -41,21 +41,6 @@
             app:destination="@id/sign_in_frag" />
     </fragment>
     <fragment
-        android:id="@+id/utente_operatore"
-        android:name="com.example.educa.Fragment.Utente"
-        android:label="fragment_utente"
-        tools:layout="@layout/fragment_utente_operatore" >
-        <action
-            android:id="@+id/action_utente_operatore_to_miei_utenti_bambini"
-            app:destination="@id/miei_utenti_bambini" />
-        <action
-            android:id="@+id/action_utente_operatore_to_home_ricerca_3"
-            app:destination="@id/home_ricerca_3" />
-        <action
-            android:id="@+id/action_utente_operatore_to_account"
-            app:destination="@id/account" />
-    </fragment>
-    <fragment
         android:id="@+id/miei_utenti_bambini"
         android:name="com.example.educa.Fragment.Miei_utenti_bambini"
         android:label="fragment_miei_utenti_bambini"
@@ -69,6 +54,9 @@
         <action
             android:id="@+id/action_miei_utenti_bambini_to_lista_attivita"
             app:destination="@id/lista_attivita" />
+        <action
+            android:id="@+id/action_miei_utenti_bambini_to_aggiungi_utente"
+            app:destination="@id/aggiungi_utente" />
 
     </fragment>
     <fragment
@@ -93,6 +81,9 @@
         <action
             android:id="@+id/action_lista_attivita_to_home_ricerca_3"
             app:destination="@id/home_ricerca_3" />
+        <action
+            android:id="@+id/action_lista_attivita_to_aggiungi_attivita"
+            app:destination="@id/aggiungi_attivita" />
     </fragment>
     <fragment
         android:id="@+id/Attivita_ritornate"
@@ -106,6 +97,18 @@
             android:name="comando "
             app:argType="string"
             android:defaultValue='""' />
+        <action
+            android:id="@+id/action_Attivita_ritornate_to_lista_attivita"
+            app:destination="@id/lista_attivita" />
+        <action
+            android:id="@+id/action_Attivita_ritornate_to_miei_utenti_bambini"
+            app:destination="@id/miei_utenti_bambini" />
+        <action
+            android:id="@+id/action_Attivita_ritornate_to_account"
+            app:destination="@id/account" />
+        <action
+            android:id="@+id/action_Attivita_ritornate_to_home_ricerca_3"
+            app:destination="@id/home_ricerca_3" />
 
     </fragment>
     <fragment
@@ -148,8 +151,13 @@
             app:destination="@id/miei_utenti_bambini" />
     </fragment>
     <fragment
-        android:id="@+id/botton_action_bar_peronsalizzata"
-        android:name="com.example.educa.botton_action_bar_peronsalizzata"
-        android:label="fragment_botton_action_bar_peronsalizzata"
-        tools:layout="@layout/fragment_botton_action_bar_peronsalizzata" />
+        android:id="@+id/aggiungi_attivita"
+        android:name="com.example.educa.Aggiungi_attivita"
+        android:label="fragment_aggiungi_attivita"
+        tools:layout="@layout/fragment_aggiungi_attivita" />
+    <fragment
+        android:id="@+id/aggiungi_utente"
+        android:name="com.example.educa.Aggiungi_utente"
+        android:label="fragment_aggiungi_utente"
+        tools:layout="@layout/fragment_aggiungi_utente" />
 </navigation>

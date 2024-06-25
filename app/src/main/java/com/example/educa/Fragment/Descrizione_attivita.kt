@@ -30,11 +30,12 @@ class Descrizione_attivita : Fragment() {
         activity?.let {
             titoloTextView.text = it.name
             etaTextView.text = "età: "+ it.age.toString()
-            durataTextView.text ="durata: " +it.duration.toString()
-            modalitaTextView.text = "modalità: "+when{
-                it.isForSingle->" Singolo"
-                it.isForGroup->" Gruppo"
-                else->" Ambito"
+            durataTextView.text ="durata: " +it.duration.toString()+ " minuti"
+            modalitaTextView.text = "modalità: "+ when {
+                it.isForSingle && it.isForGroup -> "Singolo e Gruppo"
+                it.isForSingle -> "Singolo"
+                it.isForGroup -> "Gruppo"
+                else -> " "
             }
             descrizioneTextView.text = it.descriptionLong
             }

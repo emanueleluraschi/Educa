@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.educa.Adapter.ActivityAdapter
@@ -45,6 +47,23 @@ class Attivita_ritornate : Fragment() {
                 activityAdapter.updateActivities(activities)
                 numeroAttivitaTextView.text = "${activities.size}"
             }
+        }
+        val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
+        val btn_listasalvate= view.findViewById<ImageButton>(R.id.Btn_salvate)
+        val btn_account = view.findViewById<ImageButton>(R.id.Btn_account)
+        val btn_listautenti= view.findViewById<ImageButton>(R.id.Btn_utenti)
+
+        btn_home.setOnClickListener {
+            view.findNavController().navigate(R.id.action_Attivita_ritornate_to_home_ricerca_3)
+        }
+        btn_account.setOnClickListener {
+            view.findNavController().navigate(R.id.action_Attivita_ritornate_to_account)
+        }
+        btn_listautenti.setOnClickListener {
+            view.findNavController().navigate(R.id.action_Attivita_ritornate_to_miei_utenti_bambini)
+        }
+        btn_listasalvate.setOnClickListener {
+            view.findNavController().navigate(R.id.action_Attivita_ritornate_to_lista_attivita)
         }
 
 
