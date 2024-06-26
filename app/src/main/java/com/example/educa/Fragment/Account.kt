@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.ImageButton
+import android.widget.Spinner
 import android.widget.Switch
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import com.example.educa.R
 
@@ -22,9 +25,19 @@ class Account : Fragment() {
 
         val nightModeSwitch = view.findViewById<Switch>(R.id.Account_modalita_nutturna)
         nightModeSwitch.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {}
+            if (isChecked) {
+                // Imposta il temaをAppCompatDelegate.MODE_NIGHT_YESに設定
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                } else {
+                // Imposta il temaをAppCompatDelegate.MODE_NIGHT_NOに設定
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
+        val languageSpinner = view.findViewById<Spinner>(R.id.Account_lingua)
 
-
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, resources.getStringArray(R.array.language))
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        languageSpinner.adapter = adapter
 
 
         val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
