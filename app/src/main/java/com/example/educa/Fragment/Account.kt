@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Switch
 import androidx.navigation.findNavController
 import com.example.educa.R
 
@@ -18,6 +19,11 @@ class Account : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_account, container, false)
+
+        val nightModeSwitch = view.findViewById<Switch>(R.id.Account_modalita_nutturna)
+        nightModeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {}
+
 
 
 

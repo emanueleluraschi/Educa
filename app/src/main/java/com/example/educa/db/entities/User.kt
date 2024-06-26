@@ -1,10 +1,9 @@
 package com.example.educa.db.entities
 
 data class User(
-    val id: Int? = null, // Potrebbe essere autogenerato dal database
-    val username: String,
-    val email: String,
-    // Aggiungi altri attributi degli utenti se necessario, ad esempio:
-    // val name: String? = null,
-    // val profilePictureUrl: String? = null
+    val alias: String,
+    val age: Int,
+    val first_name: String? = null,
+    val last_name: String? = null,
+    val tax_code: String? = null
 )

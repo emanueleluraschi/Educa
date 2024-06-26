@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.Account" >
+    tools:context=".Fragment.Account">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -111,41 +111,101 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
+    <Switch
+        android:id="@+id/Account_modalita_nutturna"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:text="Modalità notturna  "
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Account_lingua" />
+
+    <Spinner
+        android:id="@+id/Account_lingua"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/Account_modalita_nutturna"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
     <TextView
-        android:id="@+id/txt_account_nome_cognome"
+        android:id="@+id/Intestazione_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nome"
-        tools:layout_editor_absoluteX="194dp"
-        tools:layout_editor_absoluteY="92dp" />
+        android:fontFamily="@font/poppins_bold"
+        android:text="Account"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/mia_immagine_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_circle_24"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="50dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toTopOf="@+id/Account_lingua"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Intestazione_account">
 
-    <TextView
-        android:id="@+id/txt_account_professione"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="professione"
-        tools:layout_editor_absoluteX="195dp"
-        tools:layout_editor_absoluteY="128dp" />
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nome"
+            app:layout_constraintBottom_toTopOf="@+id/profile_surname"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageFilterView"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txt_acccount_bio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="bio"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="169dp" />
+        <TextView
+            android:id="@+id/profile_surname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cognome"
+            app:layout_constraintBottom_toTopOf="@+id/profile_profession"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageFilterView"
+            app:layout_constraintTop_toBottomOf="@+id/profile_name" />
+
+        <TextView
+            android:id="@+id/profile_profession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Professione"
+            app:layout_constraintBottom_toTopOf="@+id/profile_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageFilterView"
+            app:layout_constraintTop_toBottomOf="@+id/profile_surname" />
+
+        <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageFilterView"
+            app:layout_constraintTop_toBottomOf="@+id/profile_profession" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/imageFilterView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/account_circle_home_48"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

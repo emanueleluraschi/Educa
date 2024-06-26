@@ -152,12 +152,12 @@
     </fragment>
     <fragment
         android:id="@+id/aggiungi_attivita"
-        android:name="com.example.educa.Aggiungi_attivita"
+        android:name="com.example.educa.Fragment.Aggiungi_attivita"
         android:label="fragment_aggiungi_attivita"
         tools:layout="@layout/fragment_aggiungi_attivita" />
     <fragment
         android:id="@+id/aggiungi_utente"
-        android:name="com.example.educa.Aggiungi_utente"
+        android:name="com.example.educa.Fragment.Aggiungi_utente"
         android:label="fragment_aggiungi_utente"
         tools:layout="@layout/fragment_aggiungi_utente" />
 </navigation>

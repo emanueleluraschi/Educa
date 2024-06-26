@@ -1,14 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Aggiungi_utente">
+    tools:context=".Fragment.Aggiungi_utente">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/nomeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nome:"
+        app:layout_constraintBottom_toTopOf="@+id/cognomeLabel"
+        app:layout_constraintEnd_toStartOf="@+id/nomeInput"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titoloAggiungiUtente" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/cognomeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cognome:"
+        app:layout_constraintBottom_toTopOf="@+id/etaLabel"
+        app:layout_constraintEnd_toStartOf="@+id/cognomeInput"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomeLabel" />
+
+    <TextView
+        android:id="@+id/aliasLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="alias:"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/aliasInput"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etaLabel" />
+
+    <Button
+        android:id="@+id/aggiungiUtenteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aggiungi Utente"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/etaLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="età:"
+        app:layout_constraintBottom_toTopOf="@+id/aliasLabel"
+        app:layout_constraintEnd_toStartOf="@+id/etaInput"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cognomeLabel" />
+
+    <EditText
+        android:id="@+id/nomeInput"
+        style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="nome utente"
+        android:hyphenationFrequency="normal"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/nomeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cognomeLabel"
+        app:layout_constraintTop_toTopOf="@+id/nomeLabel" />
+
+    <EditText
+        android:id="@+id/cognomeInput"
+        style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="cognome utente"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/cognomeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cognomeLabel"
+        app:layout_constraintTop_toTopOf="@+id/cognomeLabel" />
+
+    <EditText
+        android:id="@+id/etaInput"
+        style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="età"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/etaLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cognomeLabel"
+        app:layout_constraintTop_toTopOf="@+id/etaLabel" />
+
+    <EditText
+        android:id="@+id/aliasInput"
+        style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="alias personale e distinto"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/aliasLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cognomeLabel"
+        app:layout_constraintTop_toTopOf="@+id/aliasLabel" />
+
+    <TextView
+        android:id="@+id/titoloAggiungiUtente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scrivi le caratteristiche dell'utente"
+        app:layout_constraintBottom_toTopOf="@+id/nomeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nome, cognome non necessari, alias obbligatoro"
+        android:textColor="@color/color_action_bar_icon"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aggiungiUtenteButton" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="250sp"
+        android:layout_height="200sp"
+        android:src="@drawable/immagine_sfondo_aggiugi_utente"
+        app:layout_constraintBottom_toTopOf="@+id/aggiungiUtenteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aliasLabel" />
+</androidx.constraintlayout.widget.ConstraintLayout>
