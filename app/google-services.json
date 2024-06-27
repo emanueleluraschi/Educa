@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "565191752948",
+    "project_id": "educa-b09e6",
+    "storage_bucket": "educa-b09e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565191752948:android:025663d02aaa225d0972a1",
+        "android_client_info": {
+          "package_name": "com.example.educa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhTddZtAiJzqDEWL8XTpF0lJ8dOssUvyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -47,7 +47,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_in_loggati" />
+        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_up_loggati" />
 
     <TextView
         android:id="@+id/Txt_sign_up_tosignin"
@@ -84,6 +84,7 @@
         android:layout_height="wrap_content"
         android:text="Crea il tuo account per continuare"
         android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Txt_sign_up_registrati" />
 
@@ -96,7 +97,6 @@
         android:fontFamily="@font/poppins_bold"
         android:text="Registrati"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Edt_sign_up_nome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,14 +128,14 @@
         android:hint="******"
         android:inputType="textPassword"
 
-        app:layout_constraintBottom_toTopOf="@+id/Btn_sign_in_loggati"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_sign_up_ruolo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Edt_sign_up_email" />
 
     <Button
-        android:id="@+id/Btn_sign_in_loggati"
+        android:id="@+id/Btn_sign_up_loggati"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create Account"
@@ -143,33 +143,89 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Edt_sign_up_password" />
+        app:layout_constraintTop_toBottomOf="@+id/Edt_sign_up_ruolo" />
 
     <TextView
         android:id="@+id/Txt_sign_up_signingoogleofacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
         android:text="Or sign in with"
         android:textSize="12sp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_in_loggati" />
+        app:layout_constraintTop_toBottomOf="@+id/Btn_sign_up_loggati" />
 
     <EditText
         android:id="@+id/Edt_sign_up_nome"
         style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="nome"
 
+        android:hint="nome"
         app:layout_constraintBottom_toTopOf="@+id/Edt_sign_up_email"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Edt_sign_up_cognome"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Txt_sign_up_registrati" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Ruolo"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_sign_up_ruolo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/Edt_sign_up_ruolo"
+        style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="ruolo"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_sign_up_loggati"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Edt_sign_up_password" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Nome"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_sign_up_nome"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Cognome"
+        app:layout_constraintBottom_toTopOf="@+id/Edt_sign_up_cognome"
+        app:layout_constraintEnd_toEndOf="@+id/Edt_sign_up_cognome" />
+
+    <EditText
+        android:id="@+id/Edt_sign_up_cognome"
+        style="@style/Widget.Material3.AutoCompleteTextView.FilledBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="cognome"
+        android:inputType="text"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/Edt_sign_up_nome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Edt_sign_up_nome"
+        app:layout_constraintTop_toTopOf="@+id/Edt_sign_up_nome" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,6 @@ import android.database.Cursor
 import com.example.educa.db.DatabaseHelper
 import com.example.educa.db.entities.Operator
 
-
 class OperatorDao(context: Context) {
 
     private val dbHelper = DatabaseHelper(context)
@@ -14,41 +13,22 @@ class OperatorDao(context: Context) {
     fun insertOperator(operator: Operator) {
         val db = dbHelper.writableDatabase
         val values = ContentValues().apply {
-            put("username", operator.username)
-            put("email", operator.email)
-            // Aggiungi altri attributi se presenti nella classe Operator
+            put("alias", operator.alias)
+            put("first_name", operator.first_name)
+            put("last_name", operator.last_name)
+            put("role", operator.role)
         }
         db.insert("Operators", null, values)
         db.close()
     }
 
-    fun getOperatorById(id: Int): Operator? {
+    fun getOperatorByAlias(alias: String): Operator? {
         val db = dbHelper.readableDatabase
         val cursor: Cursor = db.query(
             "Operators",
             null,
-            "id = ?",
-            arrayOf(id.toString()),
-            null,
-            null,
-            null
-        )
-        var operator: Operator? = null
-        if (cursor.moveToFirst()) {
-            operator = createOperatorFromCursor(cursor)
-        }
-        cursor.close()
-        db.close()
-        return operator
-    }
-
-    fun getOperatorByUsername(username: String): Operator? {
-        val db = dbHelper.readableDatabase
-        val cursor: Cursor = db.query(
-            "Operators",
-            null,
-            "username = ?",
-            arrayOf(username),
+            "alias = ?",
+            arrayOf(alias),
             null,
             null,
             null
@@ -66,10 +46,10 @@ class OperatorDao(context: Context) {
 
     private fun createOperatorFromCursor(cursor: Cursor): Operator {
         return Operator(
-            id = cursor.getInt(cursor.getColumnIndexOrThrow("id")),
-            username = cursor.getString(cursor.getColumnIndexOrThrow("username")),
-            email = cursor.getString(cursor.getColumnIndexOrThrow("email"))
-            // Estrai altri attributi se presenti nella classe Operator
+            alias = cursor.getString(cursor.getColumnIndexOrThrow("alias")),
+            first_name = cursor.getString(cursor.getColumnIndexOrThrow("first_name")),
+            last_name = cursor.getString(cursor.getColumnIndexOrThrow("last_name")),
+            role = cursor.getString(cursor.getColumnIndexOrThrow("role"))
         )
     }
 }

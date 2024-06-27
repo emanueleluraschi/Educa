@@ -54,7 +54,7 @@
             android:contentDescription="bottone attività salvate"
             android:scaleType="centerInside"
             android:src="@drawable/saved_search_24"
-            app:layout_constraintEnd_toStartOf="@+id/Btn_account"
+            app:layout_constraintEnd_toStartOf="@+id/Btn_utenti"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/Btn_ricerca"
             app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
@@ -67,22 +67,23 @@
             android:contentDescription="bottone account"
             android:scaleType="centerInside"
             android:src="@drawable/person_24"
-            app:layout_constraintEnd_toStartOf="@+id/Btn_utenti"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/Btn_salvate"
+            app:layout_constraintStart_toEndOf="@+id/Btn_utenti"
             app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
 
         <ImageButton
             android:id="@+id/Btn_utenti"
             android:layout_width="60sp"
             android:layout_height="60sp"
+            android:layout_marginTop="4dp"
             android:background="@drawable/trasparente"
             android:contentDescription="bottone utenti"
             android:scaleType="centerInside"
             android:src="@drawable/contacts_24"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/Btn_account"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/Btn_account"
+            app:layout_constraintStart_toEndOf="@+id/Btn_salvate"
             app:layout_constraintTop_toTopOf="@+id/Btn_ricerca" />
 
         <TextView
