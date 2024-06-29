@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -35,6 +36,10 @@ class Lista_attivita : Fragment() {
         val adapter = FavoriteActivityAdapter(favoriteActivity)
         rec.adapter = adapter
         rec.layoutManager = LinearLayoutManager(requireContext())
+
+        val numeroattivitàtrovate = view.findViewById<TextView>(R.id.Txt_lista_attivita_numero)
+        numeroattivitàtrovate.text = favoriteActivity.size.toString()
+
 
 
 

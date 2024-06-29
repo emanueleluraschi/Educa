@@ -53,7 +53,7 @@
             android:background="@drawable/trasparente"
             android:contentDescription="bottone attività salvate"
             android:scaleType="centerInside"
-            android:src="@drawable/saved_search_24"
+            android:src="@drawable/baseline_saved_search_36"
             app:layout_constraintEnd_toStartOf="@+id/Btn_utenti"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/Btn_ricerca"

@@ -23,7 +23,7 @@
             android:background="@drawable/trasparente"
             android:contentDescription="bottone ricerca"
             android:scaleType="centerInside"
-            android:src="@drawable/search_24"
+            android:src="@drawable/baseline_search_36"
             app:layout_constraintEnd_toStartOf="@+id/Btn_salvate"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"

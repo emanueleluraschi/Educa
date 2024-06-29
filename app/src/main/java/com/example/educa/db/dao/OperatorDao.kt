@@ -9,7 +9,26 @@ import com.example.educa.db.entities.Operator
 class OperatorDao(context: Context) {
 
     private val dbHelper = DatabaseHelper(context)
-
+    fun getFirstOperator(): Operator? {
+        val db = dbHelper.readableDatabase
+        val cursor: Cursor = db.query(
+            "Operators",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "1" // Limita la query al primo risultato
+        )
+        var operator: Operator? = null
+        if (cursor.moveToFirst()) {
+            operator = createOperatorFromCursor(cursor)
+        }
+        cursor.close()
+        db.close()
+        return operator
+    }
     fun insertOperator(operator: Operator) {
         val db = dbHelper.writableDatabase
         val values = ContentValues().apply {

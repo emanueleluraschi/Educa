@@ -65,7 +65,7 @@
             android:background="@drawable/trasparente"
             android:contentDescription="bottone utenti"
             android:scaleType="centerInside"
-            android:src="@drawable/contacts_24"
+            android:src="@drawable/baseline_contacts_36"
             app:layout_constraintEnd_toStartOf="@+id/Btn_account"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/Btn_salvate"

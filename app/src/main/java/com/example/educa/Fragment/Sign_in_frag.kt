@@ -37,7 +37,27 @@ class Sign_in_frag : Fragment() {
         val password = view?.findViewById<EditText>(R.id.Edt_sign_up_password)
 
 
-
+        val txtPasswordDimenticata = view.findViewById<TextView>(R.id.txt_passdimenticata)
+        txtPasswordDimenticata.setOnClickListener {
+            val emailText = email?.text.toString().trim()
+            if (emailText.isNotEmpty()) {
+                auth.sendPasswordResetEmail(emailText)
+                    .addOnCompleteListener(requireActivity()) { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                requireContext(),
+                                "Email di reset della password inviata a $emailText",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            val errorMessage = task.exception?.message ?: "Errore durante l'invio dell'email di reset"
+                            Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+            } else {
+                Toast.makeText(requireContext(), "Inserisci l'email per resettare la password", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         // Inflate the layout for this fragment
 

@@ -58,6 +58,7 @@
             android:id="@+id/action_miei_utenti_bambini_to_aggiungi_utente"
             app:destination="@id/aggiungi_utente" />
 
+
     </fragment>
     <fragment
         android:id="@+id/descrizione_attivita"

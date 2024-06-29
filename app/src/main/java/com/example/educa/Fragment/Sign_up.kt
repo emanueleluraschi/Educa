@@ -46,7 +46,7 @@ class Sign_up : Fragment() {
                 auth.createUserWithEmailAndPassword(emailText, passwordText).addOnCompleteListener(requireActivity()) { task ->
                     if(task.isSuccessful){
                         val user = auth.currentUser
-                        user?.sendEmailVerification()
+
                         Toast.makeText(requireContext(), "Registrazione effettuata con successo", Toast.LENGTH_SHORT).show()
                         val newOperator = Operator(
                             alias = emailText,

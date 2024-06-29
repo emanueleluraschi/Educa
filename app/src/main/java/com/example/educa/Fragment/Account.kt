@@ -9,9 +9,11 @@ import android.widget.ArrayAdapter
 import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.Switch
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import com.example.educa.R
+import com.example.educa.db.dao.OperatorDao
 
 
 class Account : Fragment() {
@@ -39,6 +41,23 @@ class Account : Fragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         languageSpinner.adapter = adapter
 
+        val operatore= OperatorDao(requireContext())
+        val firstOperatorDao = operatore.getFirstOperator()
+
+        val nome = firstOperatorDao?.first_name
+        val cognome = firstOperatorDao?.last_name
+        val email = firstOperatorDao?.alias
+        val role = firstOperatorDao?.role
+
+        val nomeTextView = view.findViewById<TextView>(R.id.profile_name)
+        val cognomeTextView = view.findViewById<TextView>(R.id.profile_surname)
+        val ruoloTextView = view.findViewById<TextView>(R.id.profile_profession)
+        val emailTextView = view.findViewById<TextView>(R.id.profile_email)
+
+        nomeTextView.text = nome
+        cognomeTextView.text = cognome
+        ruoloTextView.text = role
+        emailTextView.text = email
 
         val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
         val btn_listasalvate= view.findViewById<ImageButton>(R.id.Btn_salvate)
