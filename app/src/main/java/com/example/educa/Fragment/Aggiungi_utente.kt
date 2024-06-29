@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.educa.R
 import com.example.educa.db.dao.UserDao
 import com.example.educa.db.entities.User
@@ -34,6 +35,12 @@ class Aggiungi_utente : Fragment() {
         val etaInput = view.findViewById<EditText>(R.id.etaInput)
         val aliasInput = view.findViewById<EditText>(R.id.aliasInput)
         val aggiungiUtenteButton = view.findViewById<Button>(R.id.aggiungiUtenteButton)
+
+        val associa_obiettivo_utente = view.findViewById<Button>(R.id.Btn_associa_utente_aggiungi_obiettivo)
+
+        associa_obiettivo_utente.setOnClickListener {
+            view.findNavController().navigate(R.id.action_aggiungi_utente_to_associa_obiettivo_utente)
+        }
 
         aggiungiUtenteButton.setOnClickListener {
             val nome = nomeInput.text.toString()

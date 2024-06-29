@@ -160,5 +160,18 @@
         android:id="@+id/aggiungi_utente"
         android:name="com.example.educa.Fragment.Aggiungi_utente"
         android:label="fragment_aggiungi_utente"
-        tools:layout="@layout/fragment_aggiungi_utente" />
+        tools:layout="@layout/fragment_aggiungi_utente" >
+        <action
+            android:id="@+id/action_aggiungi_utente_to_associa_obiettivo_utente"
+            app:destination="@id/associa_obiettivo_utente" />
+    </fragment>
+    <fragment
+        android:id="@+id/associa_obiettivo_utente"
+        android:name="com.example.educa.Fragment.Associa_obiettivo_utente"
+        android:label="fragment_associa_obiettivo_utente"
+        tools:layout="@layout/fragment_associa_obiettivo_utente" >
+        <action
+            android:id="@+id/action_associa_obiettivo_utente_to_aggiungi_utente"
+            app:destination="@id/aggiungi_utente" />
+    </fragment>
 </navigation>

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.Aggiungi_utente">
+    tools:context=".Fragment.Aggiungi_utente"
+    android:padding="16sp">
 
     <TextView
         android:id="@+id/nomeLabel"
@@ -33,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="alias:"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_associa_utente_aggiungi_obiettivo"
         app:layout_constraintEnd_toStartOf="@+id/aliasInput"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,9 +42,11 @@
 
     <Button
         android:id="@+id/aggiungiUtenteButton"
-        android:layout_width="wrap_content"
+        style="@style/PrimaryButtonStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Aggiungi Utente"
+        android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -108,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="alias personale e distinto"
+        android:hint="alias personale "
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/aliasLabel"
         app:layout_constraintEnd_toEndOf="parent"
@@ -145,6 +148,18 @@
         android:layout_height="200sp"
         android:src="@drawable/immagine_sfondo_aggiugi_utente"
         app:layout_constraintBottom_toTopOf="@+id/aggiungiUtenteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Btn_associa_utente_aggiungi_obiettivo" />
+
+    <Button
+        android:id="@+id/Btn_associa_utente_aggiungi_obiettivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Associa obiettivi"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
