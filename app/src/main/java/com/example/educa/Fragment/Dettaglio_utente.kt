@@ -13,6 +13,7 @@ import com.example.educa.Adapter.ActivityAdapter
 import com.example.educa.Adapter.SuggestedActivityAdapter
 import com.example.educa.R
 import com.example.educa.SharedViewModel
+import com.example.educa.SpacesItemDecoration
 import com.example.educa.db.dao.ActivityDao
 import com.example.educa.db.dao.UserObjectiveDao
 
@@ -46,7 +47,7 @@ class Dettaglio_utente : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val activityAdapter = ActivityAdapter(emptyList()) // Inizializza con una lista vuota
         recyclerView.adapter = suggestedActivityAdapter
-
+        recyclerView.addItemDecoration(SpacesItemDecoration(10))
         val userNameTextView = view.findViewById<TextView>(R.id.vista_utente_tv_user_name)
         val userSurnameTextView = view.findViewById<TextView>(R.id.vista_utente_tv_user_surname)
         val userAgeTextView = view.findViewById<TextView>(R.id.vista_utente_tv_user_age)
