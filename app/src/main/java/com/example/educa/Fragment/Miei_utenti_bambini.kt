@@ -39,7 +39,11 @@ class Miei_utenti_bambini : Fragment() {
 
         recyclerView= view.findViewById<RecyclerView>(R.id.Recycleview_utenti)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        userAdapter = UserAdapter(userDao.getAllUsers(), sharedViewModel)
+        userAdapter = UserAdapter(userDao.getAllUsers(), sharedViewModel){ user ->
+            // Gestisci l'eliminazione dell'utente qui
+            userDao.deleteUser(user)
+            userAdapter.updateUsers(userDao.getAllUsers()) // Aggiorna la lista
+        }
         recyclerView.adapter = userAdapter
 
 

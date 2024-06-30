@@ -4,6 +4,7 @@ package com.example.educa.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +15,8 @@ import com.example.educa.db.entities.User
 
 class UserAdapter(
     private var userList: List<User>,
-    private val sharedViewModel: SharedViewModel) :
+    private val sharedViewModel: SharedViewModel,
+    private val onUserDelete: (User) -> Unit) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
 
@@ -47,6 +49,20 @@ class UserAdapter(
             sharedViewModel.user.value = user
 
             it.findNavController().navigate(R.id.action_miei_utenti_bambini_to_dettaglio_utente)
+        }
+        holder.itemView.setOnLongClickListener { view ->
+            val popupMenu = PopupMenu(view.context, view)
+            popupMenu.inflate(R.menu.user_context_menu) // Crea un menu con l'opzione "Elimina"
+            popupMenu.setOnMenuItemClickListener { menuItem ->
+                if (menuItem.itemId == R.id.action_delete_user) {
+                    onUserDelete(user) // Chiama la callback per eliminare l'utente
+                    true
+                } else {
+                    false
+                }
+            }
+            popupMenu.show()
+            true
         }
     }
 

@@ -24,6 +24,10 @@ class UserDao(context: Context) {
         }
         db.insert("Users", null, values)
     }
+    fun deleteUser(user: User) {
+        val db: SQLiteDatabase = dbHelper.writableDatabase
+        db.delete("Users", "alias = ?", arrayOf(user.alias))
+    }
 
     fun getUserByAlias(alias: String): User? {
         val db: SQLiteDatabase = dbHelper.readableDatabase
