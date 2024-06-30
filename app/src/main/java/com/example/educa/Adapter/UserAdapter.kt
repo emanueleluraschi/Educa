@@ -8,11 +8,20 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.educa.R
+import com.example.educa.SharedViewModel
 import com.example.educa.db.entities.User
 
 
-class UserAdapter(private var userList: List<User>) :
+class UserAdapter(
+    private var userList: List<User>,
+    private val sharedViewModel: SharedViewModel) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+
+
+
+
+
+
 
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val aliasTextView: TextView = itemView.findViewById(R.id.userAliasTextView)
@@ -35,6 +44,8 @@ class UserAdapter(private var userList: List<User>) :
         holder.ageTextView.text = "Età: ${user.age}"
 
         holder.itemView.setOnClickListener {
+            sharedViewModel.user.value = user
+
             it.findNavController().navigate(R.id.action_miei_utenti_bambini_to_dettaglio_utente)
         }
     }

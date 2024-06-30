@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.educa.Adapter.UserAdapter
 import com.example.educa.R
+import com.example.educa.SharedViewModel
 import com.example.educa.db.dao.UserDao
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.educa.SpacesItemDecoration
@@ -21,6 +23,8 @@ class Miei_utenti_bambini : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var userDao: UserDao
     private lateinit var userAdapter: UserAdapter
+    private val sharedViewModel: SharedViewModel by activityViewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +39,7 @@ class Miei_utenti_bambini : Fragment() {
 
         recyclerView= view.findViewById<RecyclerView>(R.id.Recycleview_utenti)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        userAdapter = UserAdapter(userDao.getAllUsers())
+        userAdapter = UserAdapter(userDao.getAllUsers(), sharedViewModel)
         recyclerView.adapter = userAdapter
 
 

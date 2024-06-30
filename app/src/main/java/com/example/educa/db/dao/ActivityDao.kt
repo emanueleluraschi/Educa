@@ -251,6 +251,19 @@ class ActivityDao(private val context: Context) {
         db.close()
         return count
     }
+    fun getActivitiesByObjectives(objectiveNames: List<String>): List<Activity> {
+        val db = dbHelper.readableDatabase
+        val placeholders = objectiveNames.joinToString { "?" }
+        val query = "SELECT * FROM Activities WHERE name IN (SELECT activity_name FROM Activity_Objectives WHERE objective_name IN ($placeholders))"
+        val cursor = db.rawQuery(query, objectiveNames.toTypedArray())
+        val activities = mutableListOf<Activity>()
+        while (cursor.moveToNext()) {
+            activities.add(createActivityFromCursor(cursor))
+        }
+        cursor.close()
+        db.close()
+        return activities
+    }
 
 // I metodi getActivitiesWithTools e getActivitiesWithObjectives richiedono
 // di definire le classi Tool e Objective e di implementare le relative DAO

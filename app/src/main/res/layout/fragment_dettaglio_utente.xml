@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BlankFragment">
+    tools:context=".Fragment.Dettaglio_utente">
 
     <TextView
         android:id="@+id/vista_utente_tv_user_name"

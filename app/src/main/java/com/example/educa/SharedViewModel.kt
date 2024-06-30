@@ -10,5 +10,5 @@ object SharedViewModel : ViewModel() {
     val activityNames = MutableLiveData<List<String>>() // Nuova variabile per la lista di nomi delle attiività
     val selectedActivity  = MutableLiveData<Activity>()
     val objectiveNames = MutableLiveData<List<String>>() // Nuova variabile per la lista di nomi degli obiettivi
-    val user = MutableLiveData<User>()
+    val user = MutableLiveData<User>() // Variabile per tenere traccia dell'utente selezionato
 }

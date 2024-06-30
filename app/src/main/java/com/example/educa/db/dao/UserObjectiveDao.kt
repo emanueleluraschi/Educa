@@ -16,6 +16,25 @@ class UserObjectiveDao(context: Context) {
         }
         db.insert("User_Objectives", null, values)
     }
+    fun getUserObjectives(userAlias: String): List<String> {
+        val db = dbHelper.readableDatabase
+        val cursor = db.query(
+            "User_Objectives",
+            arrayOf("objective_name"),
+            "user_alias = ?",
+            arrayOf(userAlias),
+            null,
+            null,
+            null
+        )
+        val objectives = mutableListOf<String>()
+        while (cursor.moveToNext()) {
+            objectives.add(cursor.getString(cursor.getColumnIndexOrThrow("objective_name")))
+        }
+        cursor.close()
+        db.close()
+        return objectives
+    }
 
     // Aggiungi altri metodi per operazioni come delete, update, query se necessario
 }

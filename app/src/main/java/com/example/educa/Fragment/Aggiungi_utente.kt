@@ -34,6 +34,7 @@ class Aggiungi_utente : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         val view =inflater.inflate(R.layout.fragment_aggiungi_utente, container, false)
 
@@ -44,8 +45,24 @@ class Aggiungi_utente : Fragment() {
         val aggiungiUtenteButton = view.findViewById<Button>(R.id.aggiungiUtenteButton)
 
         val associa_obiettivo_utente = view.findViewById<Button>(R.id.Btn_associa_utente_aggiungi_obiettivo)
+        sharedViewModel.user.value?.let {user->
+            nomeInput.setText(user.first_name)
+            cognomeInput.setText(user.last_name)
+            etaInput.setText(user.age.toString())
+            aliasInput.setText(user.alias)
 
+        }
         associa_obiettivo_utente.setOnClickListener {
+            val nuovoUtente = User(
+                alias = aliasInput.text.toString(),
+                age = etaInput.text.toString().toIntOrNull() ?: 0,
+                first_name = nomeInput.text.toString(),
+                last_name = cognomeInput.text.toString()
+            )
+
+            // Salva il nuovo utente nella SharedViewModel
+            sharedViewModel.user.value = nuovoUtente
+
             view.findNavController().navigate(R.id.action_aggiungi_utente_to_associa_obiettivo_utente)
         }
 
