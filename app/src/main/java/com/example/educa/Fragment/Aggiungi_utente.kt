@@ -8,19 +8,26 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.educa.R
+import com.example.educa.SharedViewModel
 import com.example.educa.db.dao.UserDao
+import com.example.educa.db.dao.UserObjectiveDao
 import com.example.educa.db.entities.User
 
 
 class Aggiungi_utente : Fragment() {
 
     private lateinit var userDao: UserDao
+    private lateinit var userObjectiveDao: UserObjectiveDao //
+    private val sharedViewModel: SharedViewModel by activityViewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         userDao = UserDao(requireContext()) // Inizializza il DAO
+        userObjectiveDao = UserObjectiveDao(requireContext()) // Inizializza il DAO
     }
 
     override fun onCreateView(
@@ -54,6 +61,13 @@ class Aggiungi_utente : Fragment() {
                 first_name = nome,
                 last_name = cognome)
             userDao.insertUser(nuovoUtente)
+
+           val selectedObjectiveId = sharedViewModel.objectiveNames.value?: emptyList()
+            for (objective in selectedObjectiveId) {
+                userObjectiveDao.insert(nuovoUtente.alias, objective)
+            }
+
+
 
             // Mostra un messaggio di successo
             Toast.makeText(requireContext(), "Utente aggiunto con successo!", Toast.LENGTH_SHORT).show()

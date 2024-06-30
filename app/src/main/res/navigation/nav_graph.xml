@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_miei_utenti_bambini_to_aggiungi_utente"
             app:destination="@id/aggiungi_utente" />
+        <action
+            android:id="@+id/action_miei_utenti_bambini_to_dettaglio_utente"
+            app:destination="@id/dettaglio_utente" />
 
 
     </fragment>
@@ -174,4 +177,9 @@
             android:id="@+id/action_associa_obiettivo_utente_to_aggiungi_utente"
             app:destination="@id/aggiungi_utente" />
     </fragment>
+    <fragment
+        android:id="@+id/dettaglio_utente"
+        android:name="com.example.educa.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
 </navigation>

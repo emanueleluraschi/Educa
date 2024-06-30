@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.educa.R
 import com.example.educa.db.entities.User
@@ -32,6 +33,10 @@ class UserAdapter(private var userList: List<User>) :
         holder.nameTextView.text = "Nome: ${user.first_name}"
         holder.surnameTextView.text = "Cognome: ${user.last_name}"
         holder.ageTextView.text = "Età: ${user.age}"
+
+        holder.itemView.setOnClickListener {
+            it.findNavController().navigate(R.id.action_miei_utenti_bambini_to_dettaglio_utente)
+        }
     }
 
     override fun getItemCount(): Int {
