@@ -71,4 +71,13 @@ class OperatorDao(context: Context) {
             role = cursor.getString(cursor.getColumnIndexOrThrow("role"))
         )
     }
+    fun updateOperator(operator: Operator) {
+        val db= dbHelper.writableDatabase
+        val values = ContentValues().apply {
+            put("first_name", operator.first_name)
+            put("last_name", operator.last_name)
+            put("role", operator.role)
+        }
+        db.update("Operators", values, "alias = ?", arrayOf(operator.alias))
+    }
 }

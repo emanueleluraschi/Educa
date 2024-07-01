@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.Switch
@@ -14,6 +16,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import com.example.educa.R
 import com.example.educa.db.dao.OperatorDao
+import com.example.educa.db.entities.Operator
 
 
 class Account : Fragment() {
@@ -49,17 +52,31 @@ class Account : Fragment() {
         val email = firstOperatorDao?.alias
         val role = firstOperatorDao?.role
 
-        val nomeTextView = view.findViewById<TextView>(R.id.profile_name)
-        val cognomeTextView = view.findViewById<TextView>(R.id.profile_surname)
-        val ruoloTextView = view.findViewById<TextView>(R.id.profile_profession)
+        val nomeEditText = view.findViewById<EditText>(R.id.profile_name)
+        val cognomeEditText = view.findViewById<EditText>(R.id.profile_surname)
+        val ruoloEditText = view.findViewById<EditText>(R.id.profile_profession)
         val emailTextView = view.findViewById<TextView>(R.id.profile_email)
 
-        nomeTextView.text = nome
-        cognomeTextView.text = cognome
-        ruoloTextView.text = role
+        nomeEditText.setText(nome)
+        cognomeEditText.setText(cognome)
+        ruoloEditText.setText(role)
         emailTextView.text = email
 
-        val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
+        val btnSalvaModifiche = view.findViewById<Button>(R.id.Btn_account_modifica_profilo)
+        btnSalvaModifiche.setOnClickListener {
+            val nuovoNome = nomeEditText.text.toString()
+            val nuovoCognome = cognomeEditText.text.toString()
+            val nuovoRuolo = ruoloEditText.text.toString()// Crea un nuovo oggetto Operator con i valori aggiornati
+            val operatoreAggiornato = Operator(
+                alias = email.toString(), // Assumiamo che l'email non venga modificata
+                first_name = nuovoNome,
+                last_name = nuovoCognome,
+                role = nuovoRuolo
+            )
+            operatore.updateOperator(operatoreAggiornato)
+}
+
+            val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
         val btn_listasalvate= view.findViewById<ImageButton>(R.id.Btn_salvate)
         val btn_account = view.findViewById<ImageButton>(R.id.Btn_account)
         val btn_listautenti= view.findViewById<ImageButton>(R.id.Btn_utenti)

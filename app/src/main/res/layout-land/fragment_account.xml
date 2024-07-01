@@ -117,9 +117,8 @@
         android:layout_height="50sp"
         android:text="Modalità notturna  "
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Account_lingua"
+        app:layout_constraintStart_toStartOf="@+id/Account_lingua"
         app:layout_constraintTop_toBottomOf="@+id/Account_lingua" />
 
     <Spinner
@@ -127,9 +126,8 @@
         android:layout_width="wrap_content"
         android:layout_height="50sp"
         app:layout_constraintBottom_toTopOf="@+id/Account_modalita_nutturna"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Btn_account_modifica_profilo"
+        app:layout_constraintStart_toStartOf="@+id/Btn_account_modifica_profilo"
         app:layout_constraintTop_toBottomOf="@+id/Btn_account_modifica_profilo" />
 
     <TextView
@@ -139,10 +137,10 @@
         android:fontFamily="@font/poppins_bold"
         android:text="Account"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_account_modifica_profilo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -151,20 +149,17 @@
         android:layout_height="wrap_content"
         android:text="Salva Dati"
         app:layout_constraintBottom_toTopOf="@+id/Account_lingua"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+        app:layout_constraintEnd_toEndOf="@+id/Intestazione_account"
+        app:layout_constraintStart_toStartOf="@+id/Intestazione_account"
+        app:layout_constraintTop_toBottomOf="@+id/Intestazione_account" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toTopOf="@+id/Btn_account_modifica_profilo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Intestazione_account">
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
             android:id="@+id/profile_name"
@@ -215,11 +210,11 @@
             android:src="@drawable/app_profilo1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintHorizontal_bias="0.11"
             app:layout_constraintStart_toStartOf="parent"
 
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.26999998" />
+            app:layout_constraintVertical_bias="0.34" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
