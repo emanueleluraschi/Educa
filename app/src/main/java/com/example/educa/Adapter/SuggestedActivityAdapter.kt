@@ -45,8 +45,9 @@ class SuggestedActivityAdapter(
         holder.spiegazioneTextView.text = activity.descriptionShort ?: ""
 
         holder.itemView.setOnClickListener {
+            SharedViewModel.selectedActivity.value = activity
 
-            it.findNavController().navigate(R.id.action_miei_utenti_bambini_to_dettaglio_utente)
+            it.findNavController().navigate(R.id.action_dettaglio_utente_to_descrizione_attivita)
         }
 
         holder.starImage.setImageResource(if (activity.isFavorite) R.drawable.baseline_star_48 else R.drawable.baseline_star_border_48)

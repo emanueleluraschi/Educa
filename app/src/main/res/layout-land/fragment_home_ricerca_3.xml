@@ -9,20 +9,19 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="283dp"
-        android:layout_height="268dp"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
         android:src="@drawable/ricerca_immagine_prova"
-        app:layout_constraintBottom_toTopOf="@+id/Flt_home_ricerca_a_ricerca"
+        app:layout_constraintBottom_toBottomOf="@+id/Flt_home_ricerca_a_ricerca"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Inserisci i paramentri per la ricerca"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +37,7 @@
         android:src="@drawable/baseline_search_48_celeste"
         app:fabCustomSize="72dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:maxImageSize="48sp"
@@ -52,7 +51,7 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/spinner_background_ricerca"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Spn_ricerca_eta"
         app:layout_constraintTop_toBottomOf="@+id/Spn_ricerca_gruppo_singolo" />
@@ -83,7 +82,7 @@
 
 
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/spinner_background_ricerca"
 
         android:contextClickable="true"
@@ -99,11 +98,11 @@
         style="@android:style/Widget.Material.Spinner"
         android:layout_width="0dp"
         android:layout_height="48sp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/spinner_background_ricerca"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/Spn_ricerca_obiettivo"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

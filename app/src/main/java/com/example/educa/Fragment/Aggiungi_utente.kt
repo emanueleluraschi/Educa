@@ -93,6 +93,13 @@ class Aggiungi_utente : Fragment() {
             cognomeInput.text.clear()
             etaInput.text.clear()
             aliasInput.text.clear()
+            val nuovoUtente2 = User(
+                alias = "",
+                age = 0,
+                first_name = "",
+                last_name = "")
+            sharedViewModel.user.value = nuovoUtente2
+            view.findNavController().navigate(R.id.action_aggiungi_utente_to_miei_utenti_bambini)
 
         }
 

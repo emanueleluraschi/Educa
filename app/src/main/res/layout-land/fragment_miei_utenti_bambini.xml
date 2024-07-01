@@ -4,110 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Fragment.Miei_utenti_bambini">
 
-    tools:context=".Fragment.home_ricerca_3">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="283dp"
-        android:layout_height="268dp"
-        android:src="@drawable/ricerca_immagine_prova"
-        app:layout_constraintBottom_toTopOf="@+id/Flt_home_ricerca_a_ricerca"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Inserisci i paramentri per la ricerca"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/Flt_home_ricerca_a_ricerca"
-        android:layout_width="72sp"
-        android:layout_height="72sp"
-        android:backgroundTint="@color/primarycolor"
-        android:clickable="true"
-        android:contentDescription="Ricerca"
-
-        android:src="@drawable/baseline_search_48_celeste"
-        app:fabCustomSize="72dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:maxImageSize="48sp"
-        app:tint="#FFC5E7FF" />
-
-    <Spinner
-        android:id="@+id/Spn_ricerca_tools"
-        style="@android:style/Widget.Material.Spinner"
-        android:layout_width="0dp"
-        android:layout_height="48sp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/spinner_background_ricerca"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Spn_ricerca_eta"
-        app:layout_constraintTop_toBottomOf="@+id/Spn_ricerca_gruppo_singolo" />
-
-    <Spinner
-        android:id="@+id/Spn_ricerca_eta"
-        style="@android:style/Widget.Material.Spinner"
-        android:layout_width="0dp"
-        android:layout_height="48sp"
-
-
-        android:layout_marginStart="32dp"
-        android:background="@drawable/spinner_background_ricerca"
-        android:contentDescription="@string/Eta"
-        android:prompt="@string/Eta"
-        android:spinnerMode="dropdown"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/Spn_ricerca_tools"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Spn_ricerca_obiettivo" />
-
-    <Spinner
-        android:id="@+id/Spn_ricerca_obiettivo"
-        style="@android:style/Widget.Material.Spinner"
-        android:layout_width="0dp"
-        android:layout_height="48sp"
-
-
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/spinner_background_ricerca"
-
-        android:contextClickable="true"
-        android:spinnerMode="dropdown"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/Spn_ricerca_gruppo_singolo"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Spinner
-        android:id="@+id/Spn_ricerca_gruppo_singolo"
-        style="@android:style/Widget.Material.Spinner"
-        android:layout_width="0dp"
-        android:layout_height="48sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/spinner_background_ricerca"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Spn_ricerca_obiettivo"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
+    <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -125,9 +24,7 @@
             android:background="@drawable/trasparente"
             android:contentDescription="bottone ricerca"
             android:scaleType="centerInside"
-            android:src="@drawable/baseline_search_36"
-
-
+            android:src="@drawable/search_24"
             app:layout_constraintEnd_toStartOf="@+id/Btn_salvate"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -168,7 +65,7 @@
             android:background="@drawable/trasparente"
             android:contentDescription="bottone utenti"
             android:scaleType="centerInside"
-            android:src="@drawable/contacts_24"
+            android:src="@drawable/baseline_contacts_36"
             app:layout_constraintEnd_toStartOf="@+id/Btn_account"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/Btn_salvate"
@@ -216,5 +113,28 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/F_btn_aggiungi_utente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+
+        android:contentDescription="aggiungi utente"
+        android:contextClickable="true"
+        android:src="@drawable/baseline_person_add_alt_1_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71000004" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Recycleview_utenti"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

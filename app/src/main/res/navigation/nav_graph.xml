@@ -167,6 +167,9 @@
         <action
             android:id="@+id/action_aggiungi_utente_to_associa_obiettivo_utente"
             app:destination="@id/associa_obiettivo_utente" />
+        <action
+            android:id="@+id/action_aggiungi_utente_to_miei_utenti_bambini"
+            app:destination="@id/miei_utenti_bambini" />
     </fragment>
     <fragment
         android:id="@+id/associa_obiettivo_utente"
@@ -181,5 +184,9 @@
         android:id="@+id/dettaglio_utente"
         android:name="com.example.educa.Fragment.Dettaglio_utente"
         android:label="fragment_blank"
-        tools:layout="@layout/fragment_dettaglio_utente" />
+        tools:layout="@layout/fragment_dettaglio_utente" >
+        <action
+            android:id="@+id/action_dettaglio_utente_to_descrizione_attivita"
+            app:destination="@id/descrizione_attivita" />
+    </fragment>
 </navigation>

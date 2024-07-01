@@ -3,4 +3,5 @@
     <item
         android:id="@+id/action_delete_user"
         android:title="Elimina utente" />
+
 </menu>
