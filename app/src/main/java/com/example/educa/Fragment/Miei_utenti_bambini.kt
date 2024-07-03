@@ -56,6 +56,7 @@ class Miei_utenti_bambini : Fragment() {
 
         val floatingbottonaggiungiutente = view.findViewById<FloatingActionButton>(R.id.F_btn_aggiungi_utente)
         floatingbottonaggiungiutente.setOnClickListener {
+            sharedViewModel.user.value = (null)
             view.findNavController().navigate(R.id.action_miei_utenti_bambini_to_aggiungi_utente)
         }
 
