@@ -87,8 +87,7 @@ class Aggiungi_utente : Fragment() {
 
 
             // Mostra un messaggio di successo
-            Toast.makeText(requireContext(), "Utente aggiunto con successo!", Toast.LENGTH_SHORT).show()
-            // Resetta i campi dell'interfaccia utente
+
             nomeInput.text.clear()
             cognomeInput.text.clear()
             etaInput.text.clear()
@@ -99,6 +98,10 @@ class Aggiungi_utente : Fragment() {
                 first_name = "",
                 last_name = "")
             sharedViewModel.user.value = nuovoUtente2
+
+
+            Toast.makeText(requireContext(), "Utente aggiunto con successo!", Toast.LENGTH_SHORT).show()
+            // Resetta i campi dell'interfaccia utente
             view.findNavController().navigate(R.id.action_aggiungi_utente_to_miei_utenti_bambini)
 
         }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.Welcome">
+    tools:context=".Fragment.Welcome"
+    android:padding="16sp">
 
     <ImageView
         android:id="@+id/img_welcome_immagine_iniziale"
@@ -37,9 +38,10 @@
     <Button
         android:id="@+id/Btn_welcome_Sign_in"
         style="@style/Widget.Material3.Button"
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="50sp"
 
+        android:layout_marginStart="32dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Sign-in "
         app:layout_constraintBottom_toBottomOf="@+id/img_welcome_immagine_iniziale"
@@ -50,13 +52,13 @@
     <Button
         android:id="@+id/Btn_welcome_Sign_up"
         style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-        android:layout_width="331dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="50sp"
 
         android:fontFamily="@font/poppins_regular"
         android:text="Sign-up"
-        app:layout_constraintEnd_toStartOf="@+id/img_welcome_immagine_iniziale"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Btn_welcome_Sign_in"
+        app:layout_constraintStart_toStartOf="@+id/Btn_welcome_Sign_in"
         app:layout_constraintTop_toBottomOf="@+id/Btn_welcome_Sign_in" />
 
 

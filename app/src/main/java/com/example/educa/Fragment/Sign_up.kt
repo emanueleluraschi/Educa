@@ -33,14 +33,22 @@ class Sign_up : Fragment() {
         val password = view.findViewById<EditText>(R.id.Edt_sign_up_password)
         val nome = view.findViewById<EditText>(R.id.Edt_sign_up_nome) // Aggiunto riferimento al campo nome
         val btnSignUp = view.findViewById<Button>(R.id.Btn_sign_up_loggati) // Pulsante per il sign-up
-        val txtSignIn = view.findViewById<TextView>(R.id.Txt_sign_up_tosignin)
+        val cognome = view.findViewById<EditText>(R.id.Edt_sign_up_cognome) //
+
         val ruolo = view.findViewById<EditText>(R.id.Edt_sign_up_ruolo) //
+
+        val passaasign = view.findViewById<TextView>(R.id.Txt_sign_up_tosignin)
+        passaasign.setOnClickListener {
+            view.findNavController().navigate(R.id.action_sign_up_to_sign_in_frag)
+        }
+
 
         btnSignUp.setOnClickListener {
             val emailText = email.text.toString().trim()
             val passwordText = password.text.toString().trim()
             val nomeText = nome.text.toString().trim()
             val ruoloText = ruolo.text.toString().trim()
+            val cognomeText = cognome.text.toString().trim()
 
             if (emailText.isNotEmpty() && passwordText.isNotEmpty()) {
                 auth.createUserWithEmailAndPassword(emailText, passwordText).addOnCompleteListener(requireActivity()) { task ->
@@ -50,8 +58,9 @@ class Sign_up : Fragment() {
                         Toast.makeText(requireContext(), "Registrazione effettuata con successo", Toast.LENGTH_SHORT).show()
                         val newOperator = Operator(
                             alias = emailText,
+
                             first_name = nomeText,
-                            last_name = "",
+                            last_name = cognomeText,
                             role = ruoloText,
 
                         )

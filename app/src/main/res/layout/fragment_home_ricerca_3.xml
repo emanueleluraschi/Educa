@@ -49,6 +49,8 @@
         style="@android:style/Widget.Material.Spinner"
         android:layout_width="0dp"
         android:layout_height="48sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/spinner_background_ricerca"
         android:textAlignment="center"
@@ -65,6 +67,8 @@
 
 
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
         android:background="@drawable/spinner_background_ricerca"
         android:contentDescription="@string/Eta"
         android:prompt="@string/Eta"
@@ -84,8 +88,9 @@
 
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/spinner_background_ricerca"
+        android:layout_marginEnd="4dp"
 
+        android:background="@drawable/spinner_background_ricerca"
         android:contextClickable="true"
         android:spinnerMode="dropdown"
         android:textAlignment="center"
@@ -99,6 +104,7 @@
         style="@android:style/Widget.Material.Spinner"
         android:layout_width="0dp"
         android:layout_height="48sp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/spinner_background_ricerca"
