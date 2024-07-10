@@ -27,7 +27,6 @@ class Lista_attivita : Fragment() {
         val view = inflater.inflate(R.layout.fragment_lista_attivita, container, false)
 
 
-
         val rec = view.findViewById<RecyclerView>(R.id.Recycle_layout_attivita_ritornate)
         //continuare da qui per la recyclerview
 
@@ -40,18 +39,14 @@ class Lista_attivita : Fragment() {
         val numeroattivitàtrovate = view.findViewById<TextView>(R.id.Txt_lista_attivita_numero)
         numeroattivitàtrovate.text = favoriteActivity.size.toString()
 
-
-
-
-
         rec.addItemDecoration(SpacesItemDecoration(10))
 
 
         // botton navigation view
         val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
-        val btn_listasalvate= view.findViewById<ImageButton>(R.id.Btn_salvate)
+        val btn_listasalvate = view.findViewById<ImageButton>(R.id.Btn_salvate)
         val btn_account = view.findViewById<ImageButton>(R.id.Btn_account)
-        val btn_listautenti= view.findViewById<ImageButton>(R.id.Btn_utenti)
+        val btn_listautenti = view.findViewById<ImageButton>(R.id.Btn_utenti)
 
         btn_home.setOnClickListener {
             view.findNavController().navigate(R.id.action_lista_attivita_to_home_ricerca_3)

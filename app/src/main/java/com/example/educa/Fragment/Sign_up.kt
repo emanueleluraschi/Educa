@@ -31,8 +31,10 @@ class Sign_up : Fragment() {
 
         val email = view.findViewById<EditText>(R.id.Edt_sign_up_email)
         val password = view.findViewById<EditText>(R.id.Edt_sign_up_password)
-        val nome = view.findViewById<EditText>(R.id.Edt_sign_up_nome) // Aggiunto riferimento al campo nome
-        val btnSignUp = view.findViewById<Button>(R.id.Btn_sign_up_loggati) // Pulsante per il sign-up
+        val nome =
+            view.findViewById<EditText>(R.id.Edt_sign_up_nome) // Aggiunto riferimento al campo nome
+        val btnSignUp =
+            view.findViewById<Button>(R.id.Btn_sign_up_loggati) // Pulsante per il sign-up
         val cognome = view.findViewById<EditText>(R.id.Edt_sign_up_cognome) //
 
         val ruolo = view.findViewById<EditText>(R.id.Edt_sign_up_ruolo) //
@@ -51,32 +53,35 @@ class Sign_up : Fragment() {
             val cognomeText = cognome.text.toString().trim()
 
             if (emailText.isNotEmpty() && passwordText.isNotEmpty()) {
-                auth.createUserWithEmailAndPassword(emailText, passwordText).addOnCompleteListener(requireActivity()) { task ->
-                    if(task.isSuccessful){
-                        val user = auth.currentUser
+                auth.createUserWithEmailAndPassword(emailText, passwordText)
+                    .addOnCompleteListener(requireActivity()) { task ->
+                        if (task.isSuccessful) {
+                            val user = auth.currentUser
 
-                        Toast.makeText(requireContext(), "Registrazione effettuata con successo", Toast.LENGTH_SHORT).show()
-                        val newOperator = Operator(
-                            alias = emailText,
+                            Toast.makeText(
+                                requireContext(),
+                                "Registrazione effettuata con successo",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            val newOperator = Operator(
+                                alias = emailText,
 
-                            first_name = nomeText,
-                            last_name = cognomeText,
-                            role = ruoloText,
+                                first_name = nomeText,
+                                last_name = cognomeText,
+                                role = ruoloText,
 
-                        )
-                        val opratorDao = OperatorDao(requireContext())
-                        opratorDao.insertOperator(newOperator)
+                                )
+                            val opratorDao = OperatorDao(requireContext())
+                            opratorDao.insertOperator(newOperator)
 
-                        view.findNavController().navigate(R.id.action_sign_up_to_sign_in_frag)
+                            view.findNavController().navigate(R.id.action_sign_up_to_sign_in_frag)
+                        } else {
+                            val error = "Errore durante sign_up"
+                            Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
+                        }
                     }
-                    else{
-                        val error =  "Errore durante sign_up"
-                        Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show()
-                    }
-                }
 
-            }
-            else{
+            } else {
                 Toast.makeText(requireContext(), "Compila tutti i campi", Toast.LENGTH_SHORT).show()
             }
         }

@@ -17,7 +17,11 @@ class ActivityAdapter(private var activities: List<Activity>) : // Sostituisci "
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActivityViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.attivita_view, parent, false) // Assicurati che questo sia il nome corretto del tuo layout XML
+            .inflate(
+                R.layout.attivita_view,
+                parent,
+                false
+            ) // Assicurati che questo sia il nome corretto del tuo layout XML
         return ActivityViewHolder(itemView)
     }
 
@@ -27,8 +31,9 @@ class ActivityAdapter(private var activities: List<Activity>) : // Sostituisci "
         holder.durataTextView.text = "Durata: ${activity.duration ?: "N/A"}"
 
 
-        holder.spiegazioneTextView.text = activity.descriptionShort ?: "" // Usa descriptionLong se disponibile, altrimenti una stringa vuota
-        holder.itemView.setOnClickListener{
+        holder.spiegazioneTextView.text = activity.descriptionShort
+            ?: "" // Usa descriptionLong se disponibile, altrimenti una stringa vuota
+        holder.itemView.setOnClickListener {
             Log.d("ActivityAdapter", "Descrizione cliccata per ${activity.name}")
             SharedViewModel.selectedActivity.value = activity
             it.findNavController().navigate(R.id.action_Attivita_ritornate_to_descrizione_attivita)

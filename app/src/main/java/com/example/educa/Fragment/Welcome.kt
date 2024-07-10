@@ -24,11 +24,11 @@ class Welcome : Fragment() {
         val bottonesignin = view.findViewById<Button>(R.id.Btn_welcome_Sign_in)
         val bottonesignup = view.findViewById<Button>(R.id.Btn_welcome_Sign_up)
 
-        bottonesignin.setOnClickListener(){
+        bottonesignin.setOnClickListener() {
             view.findNavController().navigate(R.id.action_welcome_to_sign_in_frag)
         }
 
-        bottonesignup.setOnClickListener(){
+        bottonesignup.setOnClickListener() {
             view.findNavController().navigate(R.id.action_welcome_to_sign_up)
         }
 

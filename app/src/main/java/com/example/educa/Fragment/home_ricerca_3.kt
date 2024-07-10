@@ -29,11 +29,10 @@ class home_ricerca_3 : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home_ricerca_3, container, false)
 
 
-
         val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
-        val btn_listasalvate= view.findViewById<ImageButton>(R.id.Btn_salvate)
+        val btn_listasalvate = view.findViewById<ImageButton>(R.id.Btn_salvate)
         val btn_account = view.findViewById<ImageButton>(R.id.Btn_account)
-        val btn_listautenti= view.findViewById<ImageButton>(R.id.Btn_utenti)
+        val btn_listautenti = view.findViewById<ImageButton>(R.id.Btn_utenti)
 
 
         btn_listasalvate.setOnClickListener {
@@ -47,24 +46,23 @@ class home_ricerca_3 : Fragment() {
         }
 
 
+        /*
 
-/*
-
-        val opzionieta = arrayOf("2", "3", "4", "5")
-        val adaptereta = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opzionieta)
-
-
-        adaptereta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        val spinnereta = view.findViewById<Spinner>(R.id.Spn_ricerca_eta)
-         spinnereta.prompt = "Seleziona l'età"
-
-        spinnereta.adapter = adaptereta
+                val opzionieta = arrayOf("2", "3", "4", "5")
+                val adaptereta = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opzionieta)
 
 
-*/
+                adaptereta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                val spinnereta = view.findViewById<Spinner>(R.id.Spn_ricerca_eta)
+                 spinnereta.prompt = "Seleziona l'età"
+
+                spinnereta.adapter = adaptereta
+
+
+        */
         // 2. Recupera le età distinte dal database
         val activityDao = ActivityDao(requireContext())
-        val ages =listOf( "Età")+ activityDao.getDistinctAges()
+        val ages = listOf("Età") + activityDao.getDistinctAges()
         // 3. Crea un ArrayAdapter con le età
         val adapterEta = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, ages)
         adapterEta.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -73,8 +71,12 @@ class home_ricerca_3 : Fragment() {
         spinnerEta.adapter = adapterEta
 
 
-        val opzioniGruppoSingolo = arrayOf("Modalità","Gruppo", "Singolo")
-        val adapterGruppoSingolo = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, opzioniGruppoSingolo)
+        val opzioniGruppoSingolo = arrayOf("Modalità", "Gruppo", "Singolo")
+        val adapterGruppoSingolo = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_item,
+            opzioniGruppoSingolo
+        )
         adapterGruppoSingolo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         val spinnerGruppoSingolo = view.findViewById<Spinner>(R.id.Spn_ricerca_gruppo_singolo)
         spinnerGruppoSingolo.adapter = adapterGruppoSingolo
@@ -83,8 +85,10 @@ class home_ricerca_3 : Fragment() {
         //val tools = toolsDao.getAllTools()
         //val toolNames = tools.map { it.name }
         //adapter per spinner tool
-        val toolNames = listOf("Materiale") + toolsDao.getAllTools().map { it.name } // Aggiungi "Materiale" all'inizio
-        val adapterTools = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, toolNames)
+        val toolNames = listOf("Materiale") + toolsDao.getAllTools()
+            .map { it.name } // Aggiungi "Materiale" all'inizio
+        val adapterTools =
+            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, toolNames)
         adapterTools.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         val spinnerTools = view.findViewById<Spinner>(R.id.Spn_ricerca_tools)
         spinnerTools.adapter = adapterTools
@@ -103,7 +107,8 @@ class home_ricerca_3 : Fragment() {
         val objectiveNames = listOf("Obiettivo") + objectives.map { it.name }
 
         // Crea un ArrayAdapter con i nomi degli obiettivi
-        val adapterObiettivi = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, objectiveNames)
+        val adapterObiettivi =
+            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, objectiveNames)
         adapterObiettivi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         // Imposta l'adapter sullo Spinner
@@ -115,7 +120,8 @@ class home_ricerca_3 : Fragment() {
 
             val viewModel: SharedViewModel by activityViewModels()
 
-            val activityNames = buildQuery(spinnerEta, spinnerGruppoSingolo, spinnerTools, spinnerObiettivi)
+            val activityNames =
+                buildQuery(spinnerEta, spinnerGruppoSingolo, spinnerTools, spinnerObiettivi)
 
             // Imposta la lista di nomi nel ViewModel
             viewModel.activityNames.value = activityNames
@@ -128,8 +134,11 @@ class home_ricerca_3 : Fragment() {
 
         return view
     }
-    private fun buildQuery(spinnerEta: Spinner, spinnerGruppoSingolo:
-    Spinner, spinnerTools: Spinner, spinnerObiettivi: Spinner): List<String> {
+
+    private fun buildQuery(
+        spinnerEta: Spinner, spinnerGruppoSingolo:
+        Spinner, spinnerTools: Spinner, spinnerObiettivi: Spinner
+    ): List<String> {
         val selectedAge = spinnerEta.selectedItem.toString()
         val selectedMode = spinnerGruppoSingolo.selectedItem.toString()
         val selectedTool = spinnerTools.selectedItem.toString()

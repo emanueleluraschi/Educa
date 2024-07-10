@@ -22,8 +22,6 @@ class Aggiungi_attivita : Fragment() {
 
 
 
-
-
         return view
 
     }

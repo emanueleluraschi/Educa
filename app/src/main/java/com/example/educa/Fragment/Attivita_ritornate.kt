@@ -41,7 +41,9 @@ class Attivita_ritornate : Fragment() {
         viewModel.activityNames.observe(viewLifecycleOwner) { names ->
             if (names != null) {
                 val activityDao = ActivityDao(requireContext())
-                val activities = names.mapNotNull { activityDao.getActivityByName(it).firstOrNull() } // Recupera i dettagli per ogni nome
+                val activities = names.mapNotNull {
+                    activityDao.getActivityByName(it).firstOrNull()
+                } // Recupera i dettagli per ogni nome
 
                 // Aggiorna l'adapter con i dettagli delle attività
                 activityAdapter.updateActivities(activities)
@@ -49,9 +51,9 @@ class Attivita_ritornate : Fragment() {
             }
         }
         val btn_home = view.findViewById<ImageButton>(R.id.Btn_ricerca)
-        val btn_listasalvate= view.findViewById<ImageButton>(R.id.Btn_salvate)
+        val btn_listasalvate = view.findViewById<ImageButton>(R.id.Btn_salvate)
         val btn_account = view.findViewById<ImageButton>(R.id.Btn_account)
-        val btn_listautenti= view.findViewById<ImageButton>(R.id.Btn_utenti)
+        val btn_listautenti = view.findViewById<ImageButton>(R.id.Btn_utenti)
 
         btn_home.setOnClickListener {
             view.findNavController().navigate(R.id.action_Attivita_ritornate_to_home_ricerca_3)

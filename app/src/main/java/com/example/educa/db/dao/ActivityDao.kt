@@ -13,12 +13,14 @@ class ActivityDao(private val context: Context) {
 
     fun insertActivity(activity: Activity) {
         if (activity.name.isBlank() || activity.descriptionShort.isBlank() || activity.age == 0) {
-            Toast.makeText(context, "Nome, descrizione ed età sono obbligatori", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Nome, descrizione ed età sono obbligatori", Toast.LENGTH_SHORT)
+                .show()
             return
         }
 
         if (isActivityNameExists(activity.name)) {
-            Toast.makeText(context, "Un'attività con questo nome esiste già", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Un'attività con questo nome esiste già", Toast.LENGTH_SHORT)
+                .show()
             return
         }
 
@@ -50,6 +52,7 @@ class ActivityDao(private val context: Context) {
         db.close()
         return activityNames
     }
+
     fun getAllActivities(): List<Activity> {
         val db = dbHelper.readableDatabase
         val cursor: Cursor = db.query("Activities", null, null, null, null, null, null)
@@ -81,6 +84,7 @@ class ActivityDao(private val context: Context) {
         db.close()
         return activities
     }
+
     fun isFavorite(name: String): Boolean {
         val db = dbHelper.readableDatabase
         val cursor: Cursor = db.query(
@@ -149,6 +153,7 @@ class ActivityDao(private val context: Context) {
         db.close()
         return activities
     }
+
     fun getActivitiesByAge(age: Int): List<Activity> {
         val db = dbHelper.readableDatabase
         val cursor: Cursor = db.query(
@@ -251,10 +256,12 @@ class ActivityDao(private val context: Context) {
         db.close()
         return count
     }
+
     fun getActivitiesByObjectives(objectiveNames: List<String>): List<Activity> {
         val db = dbHelper.readableDatabase
         val placeholders = objectiveNames.joinToString { "?" }
-        val query = "SELECT * FROM Activities WHERE name IN (SELECT activity_name FROM Activity_Objectives WHERE objective_name IN ($placeholders))"
+        val query =
+            "SELECT * FROM Activities WHERE name IN (SELECT activity_name FROM Activity_Objectives WHERE objective_name IN ($placeholders))"
         val cursor = db.rawQuery(query, objectiveNames.toTypedArray())
         val activities = mutableListOf<Activity>()
         while (cursor.moveToNext()) {
@@ -265,23 +272,23 @@ class ActivityDao(private val context: Context) {
         return activities
     }
 
-// I metodi getActivitiesWithTools e getActivitiesWithObjectives richiedono
+    // I metodi getActivitiesWithTools e getActivitiesWithObjectives richiedono
 // di definire le classi Tool e Objective e di implementare le relative DAO
 // prima di poter essere implementati correttamente.
-private fun createActivityFromCursor(cursor: Cursor): Activity {
-    return Activity(
-        name = cursor.getString(cursor.getColumnIndexOrThrow("name")),
-        age = cursor.getInt(cursor.getColumnIndexOrThrow("age")),
-        isFavorite = cursor.getInt(cursor.getColumnIndexOrThrow("is_favorite")) == 1,
-        isForGroup = cursor.getInt(cursor.getColumnIndexOrThrow("is_for_group")) == 1,
-        isForSingle = cursor.getInt(cursor.getColumnIndexOrThrow("is_for_single")) == 1,
-        descriptionShort = cursor.getString(cursor.getColumnIndexOrThrow("description_short")),
-        descriptionLong = cursor.getString(cursor.getColumnIndexOrThrow("description_long")),
-        duration = cursor.getInt(cursor.getColumnIndexOrThrow("duration")),
-        variants = cursor.getString(cursor.getColumnIndexOrThrow("variants")),
-        howToDoIt = cursor.getString(cursor.getColumnIndexOrThrow("how_to_do_it"))
-    )
-}
+    private fun createActivityFromCursor(cursor: Cursor): Activity {
+        return Activity(
+            name = cursor.getString(cursor.getColumnIndexOrThrow("name")),
+            age = cursor.getInt(cursor.getColumnIndexOrThrow("age")),
+            isFavorite = cursor.getInt(cursor.getColumnIndexOrThrow("is_favorite")) == 1,
+            isForGroup = cursor.getInt(cursor.getColumnIndexOrThrow("is_for_group")) == 1,
+            isForSingle = cursor.getInt(cursor.getColumnIndexOrThrow("is_for_single")) == 1,
+            descriptionShort = cursor.getString(cursor.getColumnIndexOrThrow("description_short")),
+            descriptionLong = cursor.getString(cursor.getColumnIndexOrThrow("description_long")),
+            duration = cursor.getInt(cursor.getColumnIndexOrThrow("duration")),
+            variants = cursor.getString(cursor.getColumnIndexOrThrow("variants")),
+            howToDoIt = cursor.getString(cursor.getColumnIndexOrThrow("how_to_do_it"))
+        )
+    }
 
     private fun isActivityNameExists(name: String): Boolean {
         val db = dbHelper.readableDatabase
@@ -291,6 +298,7 @@ private fun createActivityFromCursor(cursor: Cursor): Activity {
         db.close()
         return exists
     }
+
     fun getDistinctAges(): List<Int> {
         val db = dbHelper.readableDatabase
         val cursor = db.rawQuery("SELECT DISTINCT age FROM Activities", null)
