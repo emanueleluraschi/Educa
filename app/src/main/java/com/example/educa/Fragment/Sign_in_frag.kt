@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import com.example.educa.R
 import com.google.firebase.auth.FirebaseAuth
@@ -51,8 +52,7 @@ class Sign_in_frag : Fragment() {
                         }
                     }
             } else {
-                Toast.makeText(
-                    requireContext(),
+                Toast.makeText(requireContext(),
                     "Inserisci l'email per resettare la password",
                     Toast.LENGTH_SHORT
                 ).show()
@@ -79,7 +79,10 @@ class Sign_in_frag : Fragment() {
 
                             if (user != null) {
                                 view.findNavController()
-                                    .navigate(R.id.action_sign_in_frag_to_home_ricerca_3)
+                                    .navigate(R.id.action_sign_in_frag_to_home_ricerca_3,null,
+                                        NavOptions.Builder()
+                                        .setPopUpTo(R.id.nav_graph, inclusive = true)
+                                        .build())
                             } else {
                                 (Toast.makeText(requireContext(), "Errore", Toast.LENGTH_SHORT)
                                     .show())

@@ -15,6 +15,7 @@
         <action
             android:id="@+id/action_sign_in_frag_to_home_ricerca_3"
             app:destination="@id/home_ricerca_3" />
+
     </fragment>
     <fragment
         android:id="@+id/welcome"

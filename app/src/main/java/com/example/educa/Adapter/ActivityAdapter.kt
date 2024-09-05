@@ -48,9 +48,7 @@ class ActivityAdapter(private var activities: List<Activity>) : // Sostituisci "
             activities = activities.toMutableList().apply {
                 this[position] = activity.copy(isFavorite = !isFavorite)
             }
-
         }
-
     }
 
     override fun getItemCount(): Int {

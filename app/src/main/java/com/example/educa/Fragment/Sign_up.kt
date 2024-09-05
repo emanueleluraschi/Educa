@@ -57,7 +57,6 @@ class Sign_up : Fragment() {
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
                             val user = auth.currentUser
-
                             Toast.makeText(
                                 requireContext(),
                                 "Registrazione effettuata con successo",
@@ -65,15 +64,12 @@ class Sign_up : Fragment() {
                             ).show()
                             val newOperator = Operator(
                                 alias = emailText,
-
                                 first_name = nomeText,
                                 last_name = cognomeText,
                                 role = ruoloText,
-
                                 )
                             val opratorDao = OperatorDao(requireContext())
                             opratorDao.insertOperator(newOperator)
-
                             view.findNavController().navigate(R.id.action_sign_up_to_sign_in_frag)
                         } else {
                             val error = "Errore durante sign_up"
@@ -85,8 +81,6 @@ class Sign_up : Fragment() {
                 Toast.makeText(requireContext(), "Compila tutti i campi", Toast.LENGTH_SHORT).show()
             }
         }
-
-
         return view
     }
 

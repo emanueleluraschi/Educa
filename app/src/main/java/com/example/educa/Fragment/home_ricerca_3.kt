@@ -107,8 +107,7 @@ class home_ricerca_3 : Fragment() {
         val objectiveNames = listOf("Obiettivo") + objectives.map { it.name }
 
         // Crea un ArrayAdapter con i nomi degli obiettivi
-        val adapterObiettivi =
-            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, objectiveNames)
+        val adapterObiettivi = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, objectiveNames)
         adapterObiettivi.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         // Imposta l'adapter sullo Spinner
@@ -120,13 +119,10 @@ class home_ricerca_3 : Fragment() {
 
             val viewModel: SharedViewModel by activityViewModels()
 
-            val activityNames =
-                buildQuery(spinnerEta, spinnerGruppoSingolo, spinnerTools, spinnerObiettivi)
-
+            val activityNames = buildQuery(spinnerEta, spinnerGruppoSingolo, spinnerTools, spinnerObiettivi)
+            //vedi metodo sotto
             // Imposta la lista di nomi nel ViewModel
             viewModel.activityNames.value = activityNames
-
-
             view.findNavController().navigate(R.id.action_home_ricerca_3_to_Attivita_ritornate)
 
         }
@@ -136,8 +132,10 @@ class home_ricerca_3 : Fragment() {
     }
 
     private fun buildQuery(
-        spinnerEta: Spinner, spinnerGruppoSingolo:
-        Spinner, spinnerTools: Spinner, spinnerObiettivi: Spinner
+        spinnerEta: Spinner,
+        spinnerGruppoSingolo: Spinner,
+        spinnerTools: Spinner,
+        spinnerObiettivi: Spinner
     ): List<String> {
         val selectedAge = spinnerEta.selectedItem.toString()
         val selectedMode = spinnerGruppoSingolo.selectedItem.toString()
